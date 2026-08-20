@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Study Space"
+description = "A focused personal study dashboard for UPSC preparation with topic progress, a focus timer, searchable notes, and practice quizzes that save progress locally."
+version = "1.0.0"
+id = "artifacts/study-space"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21879
+
+[services.development]
+run = "pnpm --filter @workspace/study-space run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/study-space", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/study-space/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21879"
+BASE_PATH = "/"

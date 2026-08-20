@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Study Website</title>
+
+    <style>
+
+        /* =========================
+           BASIC
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #2563eb;
+
+            padding: 15px;
+
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            font-weight: bold;
+
+            margin: 5px 8px;
+
+            display: inline-block;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           DARK MODE BUTTON
+        ========================= */
+
+        #darkModeButton {
+            background: white;
+            color: #2563eb;
+
+            padding: 9px 14px;
+
+            border: none;
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1000px;
+
+            margin: 30px auto;
+
+            padding: 20px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            background: white;
+
+            padding: 40px 25px;
+
+            margin-bottom: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           HEADINGS
+        ========================= */
+
+        h1 {
+            color: #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #2563eb;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        button {
+            background: #2563eb;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            padding: 12px 20px;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            margin: 5px;
+
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           DASHBOARD
+        ========================= */
+
+        .dashboard-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 25px;
+        }
+
+        .dashboard-card {
+            background: #f4f7fb;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+        }
+
+        .dashboard-card h3 {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           PROGRESS BAR
+        ========================= */
+
+        .progress-container {
+            width: 100%;
+
+            height: 20px;
+
+            background: #ddd;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            width: 0%;
+
+            height: 100%;
+
+            background: #2563eb;
+
+            transition: width 0.5s;
+        }
+
+
+        /* =========================
+           TIMER
+        ========================= */
+
+        #timerDisplay {
+            font-size: 55px;
+
+            font-weight: bold;
+
+            color: #2563eb;
+
+            margin: 25px 0;
+        }
+
+        #timerMessage {
+            margin-top: 15px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           NOTES
+        ========================= */
+
+        .note-form {
+            max-width: 650px;
+
+            margin: 20px auto;
+        }
+
+        .note-form input,
+        .note-form textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin: 8px 0;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .note-form textarea {
+            resize: vertical;
+        }
+
+        #noteSearch {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            padding: 12px;
+
+            margin: 10px auto 20px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+        }
+
+        .note-card {
+
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            padding: 20px;
+
+            background: #f4f7fb;
+
+            border-radius: 10px;
+
+            text-align: left;
+        }
+
+        .note-card h3 {
+            color: #2563eb;
+
+            margin-bottom: 8px;
+        }
+
+        .note-card p {
+            white-space: pre-wrap;
+        }
+
+
+        /* =========================
+           MCQ
+        ========================= */
+
+        .mcq-question {
+
+            display: none;
+
+            background: #f4f7fb;
+
+            padding: 25px;
+
+            margin-top: 20px;
+
+            border-radius: 12px;
+
+            text-align: left;
+        }
+
+        .mcq-question.active {
+            display: block;
+        }
+
+        .mcq-question label {
+
+            display: block;
+
+            background: white;
+
+            padding: 13px;
+
+            margin: 10px 0;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        .mcq-question label:hover {
+
+            background: #e8efff;
+        }
+
+        .mcq-navigation {
+
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+        #questionCounter {
+
+            display: inline-block;
+
+            font-weight: bold;
+
+            margin: 0 15px;
+        }
+
+        #submitButton {
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           RESULT
+        ========================= */
+
+        #resultBox {
+
+            display: none;
+
+            max-width: 650px;
+
+            margin: 30px auto 0;
+
+            padding: 25px;
+
+            background: #f4f7fb;
+
+            border-radius: 12px;
+        }
+
+        #resultBox p {
+            margin: 8px 0;
+        }
+
+
+        /* =========================
+           TOPIC PROGRESS
+        ========================= */
+
+        .topic-list {
+
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            text-align: left;
+        }
+
+        .topic-item {
+
+            background: #f4f7fb;
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            border-radius: 8px;
+        }
+
+        .topic-item label {
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           SEARCH MESSAGE
+        ========================= */
+
+        #noNotesMessage {
+
+            color: #dc2626;
+
+            font-weight: bold;
+
+            display: none;
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark-mode {
+
+            background: #111827;
+
+            color: white;
+        }
+
+        body.dark-mode section {
+
+            background: #1f2937;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3 {
+
+            color: #60a5fa;
+        }
+
+        body.dark-mode .dashboard-card,
+        body.dark-mode .note-card,
+        body.dark-mode .mcq-question,
+        body.dark-mode #resultBox,
+        body.dark-mode .topic-item {
+
+            background: #374151;
+        }
+
+        body.dark-mode
+        .mcq-question label {
+
+            background: #1f2937;
+
+            color: white;
+        }
+
+        body.dark-mode
+        .mcq-question label:hover {
+
+            background: #4b5563;
+        }
+
+        body.dark-mode input,
+        body.dark-mode textarea {
+
+            background: #111827;
+
+            color: white;
+
+            border-color: #6b7280;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 4px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            section {
+                padding: 30px 18px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #timerDisplay {
+                font-size: 42px;
+            }
+
+            #questionCounter {
+                margin: 0 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="#home">🏠 Home</a>
+
+        <a href="#about">📚 About</a>
+
+        <a href="#progress">📊 Progress</a>
+
+        <a href="#timer">⏱️ Timer</a>
+
+        <a href="#notes">📚 Notes</a>
+
+        <a href="#mcq">📝 MCQ</a>
+
+        <button
+            id="darkModeButton"
+            onclick="toggleDarkMode()">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- =========================
+             HOME
+        ========================= -->
+
+        <section id="home">
+
+            <h1>
+                My Study Website 📚
+            </h1>
+
+            <h2>
+                Welcome to Your Study Space
+            </h2>
+
+            <p>
+                Welcome to your personal study website.
+                यहाँ आप study, revision, notes और MCQ
+                practice को organize कर सकते हैं।
+            </p>
+
+            <button onclick="startStudying()">
+                🚀 Start Studying
+            </button>
+
+            <p id="homeMessage"></p>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about">
+
+            <h2>
+                📚 About My Study Website
+            </h2>
+
+            <p>
+                यह website focused study और UPSC
+                preparation को organize करने के लिए
+                बनाई गई है।
+            </p>
+
+            <p>
+                Timer, Notes, MCQ और Progress tracking
+                सभी एक ही जगह उपलब्ध हैं।
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================= -->
+
+        <section>
+
+            <h2>
+                📊 Study Dashboard
+            </h2>
+
+            <div class="dashboard-grid">
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        ⏱️ Study Sessions
+                    </h3>
+
+                    <p id="dashboardSessions">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        ⏰ Study Time
+                    </h3>
+
+                    <p id="dashboardStudyTime">
+                        0 Minutes
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        📝 MCQs Solved
+                    </h3>
+
+                    <p id="dashboardMCQs">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        🏆 Best Score
+                    </h3>
+
+                    <p id="dashboardBestScore">
+                        0 / 10
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        🎯 Last Score
+                    </h3>
+
+                    <p id="dashboardLastScore">
+                        Not attempted
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        📈 Percentage
+                    </h3>
+
+                    <p id="dashboardPercentage">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        🎯 Daily Goal
+                    </h3>
+
+                    <p id="goalCompleted">
+                        Completed: 0 Hours
+                    </p>
+
+                    <p id="goalRemaining">
+                        Remaining: 2 Hours
+                    </p>
+
+                    <div class="progress-container">
+
+                        <div
+                            id="dailyProgressBar"
+                            class="progress-bar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESS
+        ========================= -->
+
+        <section id="progress">
+
+            <h2>
+                📊 My Progress
+            </h2>
+
+            <p>
+                Complete topics by checking the boxes.
+            </p>
+
+
+            <div class="topic-list">
+
+
+                <div class="topic-item">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            class="topic-checkbox"
+                            value="Article 14">
+
+                        Article 14 — समानता
+
+                    </label>
+
+                </div>
+
+
+                <div class="topic-item">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            class="topic-checkbox"
+                            value="Article 21">
+
+                        Article 21 — जीवन और व्यक्तिगत स्वतंत्रता
+
+                    </label>
+
+                </div>
+
+
+                <div class="topic-item">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            class="topic-checkbox"
+                            value="Article 32">
+
+                        Article 32 — संवैधानिक उपचार
+
+                    </label>
+
+                </div>
+
+
+                <div class="topic-item">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            class="topic-checkbox"
+                            value="Fundamental Rights">
+
+                        Fundamental Rights
+
+                    </label>
+
+                </div>
+
+
+                <div class="topic-item">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            class="topic-checkbox"
+                            value="Polity Revision">
+
+                        Polity Revision
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+
+                Topics Completed:
+                <span id="topicsCompleted">
+                    0
+                </span>
+                / 5
+
+            </h3>
+
+
+            <div class="progress-container">
+
+                <div
+                    id="topicProgressBar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TIMER
+        ========================= -->
+
+        <section id="timer">
+
+            <h2>
+                ⏱️ 5 Minute Study Timer
+            </h2>
+
+            <div id="timerDisplay">
+                05:00
+            </div>
+
+
+            <button onclick="startTimer()">
+                ▶️ Start
+            </button>
+
+
+            <button onclick="pauseTimer()">
+                ⏸️ Pause
+            </button>
+
+
+            <button onclick="resetTimer()">
+                🔄 Reset
+            </button>
+
+
+            <p id="timerMessage"></p>
+
+        </section>
+
+
+        <!-- =========================
+             NOTES
+        ========================= -->
+
+        <section id="notes">
+
+            <h2>
+                📚 Study Notes
+            </h2>
+
+            <p>
+                अपने important notes यहाँ save करें।
+            </p>
+
+
+            <input
+                type="text"
+                id="noteSearch"
+                placeholder="🔍 Search notes..."
+                oninput="searchNotes()"
+            >
+
+
+            <p id="noNotesMessage">
+                ❌ No notes found
+            </p>
+
+
+            <div class="note-form">
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Note title..."
+                >
+
+
+                <textarea
+                    id="noteText"
+                    rows="5"
+                    placeholder="Write your note...">
+                </textarea>
+
+
+                <button onclick="addNote()">
+                    ➕ Add Note
+                </button>
+
+            </div>
+
+
+            <div id="notesList"></div>
+
+        </section>
+
+
+        <!-- =========================
+             MCQ
+        ========================= -->
+
+        <section id="mcq">
+
+            <h2>
+                📝 MCQ Practice
+            </h2>
+
+            <p>
+                UPSC Polity — Fundamental Rights
+            </p>
+
+
+            <!-- Q1 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q1. भारतीय संविधान का अनुच्छेद 14 किससे संबंधित है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q1" value="A">
+                    A. स्वतंत्रता का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="B">
+                    B. समानता का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="C">
+                    C. धार्मिक स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="D">
+                    D. संवैधानिक उपचार
+                </label>
+
+            </div>
+
+
+            <!-- Q2 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q2. भारतीय संविधान का अनुच्छेद 21 किससे संबंधित है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q2" value="A">
+                    A. समानता का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="B">
+                    B. जीवन और व्यक्तिगत स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="C">
+                    C. धार्मिक स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="D">
+                    D. संपत्ति का अधिकार
+                </label>
+
+            </div>
+
+
+            <!-- Q3 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q3. अनुच्छेद 32 किससे संबंधित है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q3" value="A">
+                    A. संवैधानिक उपचार का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="B">
+                    B. समानता का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="C">
+                    C. शिक्षा का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="D">
+                    D. धार्मिक स्वतंत्रता
+                </label>
+
+            </div>
+
+
+            <!-- Q4 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q4. डॉ. बी. आर. अम्बेडकर ने किस अनुच्छेद को
+                    “heart and soul” कहा था?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q4" value="A">
+                    A. अनुच्छेद 14
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="B">
+                    B. अनुच्छेद 19
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="C">
+                    C. अनुच्छेद 32
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="D">
+                    D. अनुच्छेद 21
+                </label>
+
+            </div>
+
+
+            <!-- Q5 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q5. मौलिक अधिकार संविधान के किस भाग में हैं?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q5" value="A">
+                    A. भाग I
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="B">
+                    B. भाग II
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="C">
+                    C. भाग III
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="D">
+                    D. भाग IV
+                </label>
+
+            </div>
+
+
+            <!-- Q6 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q6. अनुच्छेद 14 किस सिद्धांत से संबंधित है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q6" value="A">
+                    A. विधि के समक्ष समानता
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="B">
+                    B. धार्मिक स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="C">
+                    C. संवैधानिक उपचार
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="D">
+                    D. शिक्षा का अधिकार
+                </label>
+
+            </div>
+
+
+            <!-- Q7 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q7. मौलिक अधिकार संविधान के किस भाग में वर्णित हैं?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q7" value="A">
+                    A. भाग I
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="B">
+                    B. भाग II
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="C">
+                    C. भाग III
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="D">
+                    D. भाग IV
+                </label>
+
+            </div>
+
+
+            <!-- Q8 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q8. अनुच्छेद 21 किससे संबंधित है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q8" value="A">
+                    A. समानता का अधिकार
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="B">
+                    B. जीवन और व्यक्तिगत स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="C">
+                    C. धार्मिक स्वतंत्रता
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="D">
+                    D. संवैधानिक उपचार
+                </label>
+
+            </div>
+
+
+            <!-- Q9 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q9. “कानून के समक्ष समानता” किस अनुच्छेद में है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q9" value="A">
+                    A. अनुच्छेद 12
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="B">
+                    B. अनुच्छेद 14
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="C">
+                    C. अनुच्छेद 19
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="D">
+                    D. अनुच्छेद 21
+                </label>
+
+            </div>
+
+
+            <!-- Q10 -->
+
+            <div class="mcq-question">
+
+                <h3>
+                    Q10. मौलिक अधिकारों का संरक्षक किसे माना जाता है?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q10" value="A">
+                    A. संसद
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="B">
+                    B. राष्ट्रपति
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="C">
+                    C. सर्वोच्च न्यायालय
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="D">
+                    D. चुनाव आयोग
+                </label>
+
+            </div>
+
+
+            <!-- MCQ NAVIGATION -->
+
+            <div class="mcq-navigation">
+
+                <button onclick="previousQuestion()">
+                    ← Previous
+                </button>
+
+                <span id="questionCounter">
+                    Q 1 / 10
+                </span>
+
+                <button onclick="nextQuestion()">
+                    Next →
+                </button>
+
+            </div>
+
+
+            <button
+                id="submitButton"
+                onclick="checkAnswers()">
+
+                🎯 Submit Test
+
+            </button>
+
+
+            <!-- RESULT -->
+
+            <div id="resultBox">
+
+                <h2>
+                    🎉 Test Completed!
+                </h2>
+
+                <p id="finalScore"></p>
+
+                <p id="finalDetails"></p>
+
+                <p id="finalPerformance"></p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           STORAGE HELPERS
+        ========================= */
+
+        function getData(key, defaultValue) {
+
+            let data =
+                localStorage.getItem(key);
+
+            if (data === null) {
+
+                return defaultValue;
+
+            }
+
+            try {
+
+                return JSON.parse(data);
+
+            } catch {
+
+                return defaultValue;
+
+            }
+
+        }
+
+
+        function saveData(key, value) {
+
+            localStorage.setItem(
+                key,
+                JSON.stringify(value)
+            );
+
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        function startStudying() {
+
+            document.getElementById("homeMessage")
+                .innerText =
+                "🎯 Great! Your study session has started. Keep going!";
+
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        function toggleDarkMode() {
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+            let enabled =
+                document.body.classList.contains(
+                    "dark-mode"
+                );
+
+            localStorage.setItem(
+                "darkMode",
+                enabled ? "enabled" : "disabled"
+            );
+
+            updateDarkModeButton();
+
+        }
+
+
+        function updateDarkModeButton() {
+
+            let button =
+                document.getElementById(
+                    "darkModeButton"
+                );
+
+            if (
+                document.body.classList.contains(
+                    "dark-mode"
+                )
+            ) {
+
+                button.innerText =
+                    "☀️ Light Mode";
+
+            } else {
+
+                button.innerText =
+                    "🌙 Dark Mode";
+
+            }
+
+        }
+
+
+        function loadDarkMode() {
+
+            if (
+                localStorage.getItem(
+                    "darkMode"
+                ) === "enabled"
+            ) {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            }
+
+            updateDarkModeButton();
+
+        }
+
+
+        /* =========================
+           TIMER
+        ========================= */
+
+        const TIMER_START =
+            5 * 60;
+
+        let timeLeft =
+            getData(
+                "timerTimeLeft",
+                TIMER_START
+            );
+
+        let timerInterval = null;
+
+
+        function updateTimer() {
+
+            let minutes =
+                Math.floor(
+                    timeLeft / 60
+                );
+
+            let seconds =
+                timeLeft % 60;
+
+
+            minutes =
+                String(minutes)
+                    .padStart(2, "0");
+
+            seconds =
+                String(seconds)
+                    .padStart(2, "0");
+
+
+            document.getElementById(
+                "timerDisplay"
+            ).innerText =
+                minutes + ":" + seconds;
+
+        }
+
+
+        function saveTimer() {
+
+            saveData(
+                "timerTimeLeft",
+                timeLeft
+            );
+
+        }
+
+
+        function startTimer() {
+
+            if (
+                timerInterval !== null
+            ) {
+
+                return;
+
+            }
+
+
+            if (timeLeft <= 0) {
+
+                timeLeft =
+                    TIMER_START;
+
+                updateTimer();
+
+            }
+
+
+            document.getElementById(
+                "timerMessage"
+            ).innerText = "";
+
+
+            timerInterval =
+                setInterval(function() {
+
+                    timeLeft--;
+
+                    updateTimer();
+
+                    saveTimer();
+
+
+                    if (timeLeft <= 0) {
+
+                        clearInterval(
+                            timerInterval
+                        );
+
+                        timerInterval = null;
+
+                        completeStudySession();
+
+                        document.getElementById(
+                            "timerMessage"
+                        ).innerText =
+                            "🎉 Study session completed!";
+
+                        timeLeft =
+                            TIMER_START;
+
+                        saveTimer();
+
+                    }
+
+                }, 1000);
+
+        }
+
+
+        function pauseTimer() {
+
+            if (
+                timerInterval !== null
+            ) {
+
+                clearInterval(
+                    timerInterval
+                );
+
+                timerInterval = null;
+
+            }
+
+
+            saveTimer();
+
+
+            document.getElementById(
+                "timerMessage"
+            ).innerText =
+                "⏸️ Study timer paused.";
+
+        }
+
+
+        function resetTimer() {
+
+            clearInterval(
+                timerInterval
+            );
+
+            timerInterval = null;
+
+            timeLeft =
+                TIMER_START;
+
+            saveTimer();
+
+            updateTimer();
+
+
+            document.getElementById(
+                "timerMessage"
+            ).innerText = "";
+
+        }
+
+
+        function completeStudySession() {
+
+            let sessions =
+                getData(
+                    "studySessions",
+                    0
+                );
+
+            let minutes =
+                getData(
+                    "studyMinutes",
+                    0
+                );
+
+
+            sessions++;
+
+            minutes += 5;
+
+
+            saveData(
+                "studySessions",
+                sessions
+            );
+
+            saveData(
+                "studyMinutes",
+                minutes
+            );
+
+
+            updateDashboard();
+
+        }
+
+
+        /* =========================
+           NOTES
+        ========================= */
+
+        function addNote() {
+
+            let title =
+                document.getElementById(
+                    "noteTitle"
+                ).value.trim();
+
+
+            let text =
+                document.getElementById(
+                    "noteText"
+                ).value.trim();
+
+
+            if (
+                title === "" ||
+                text === ""
+            ) {
+
+                alert(
+                    "Please enter both note title and note text."
+                );
+
+                return;
+
+            }
+
+
+            let notes =
+                getData(
+                    "myStudyNotes",
+                    []
+                );
+
+
+            notes.push({
+
+                title: title,
+
+                text: text
+
+            });
+
+
+            saveData(
+                "myStudyNotes",
+                notes
+            );
+
+
+            document.getElementById(
+                "noteTitle"
+            ).value = "";
+
+
+            document.getElementById(
+                "noteText"
+            ).value = "";
+
+
+            displayNotes();
+
+        }
+
+
+        function displayNotes(
+            searchText = ""
+        ) {
+
+            let notes =
+                getData(
+                    "myStudyNotes",
+                    []
+                );
+
+
+            let notesList =
+                document.getElementById(
+                    "notesList"
+                );
+
+
+            notesList.innerHTML = "";
+
+
+            let found =
+                0;
+
+
+            notes.forEach(
+                function(note, index) {
+
+                    let combined =
+                        (
+                            note.title +
+                            " " +
+                            note.text
+                        ).toLowerCase();
+
+
+                    if (
+                        !combined.includes(
+                            searchText.toLowerCase()
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    found++;
+
+
+                    let card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "note-card";
+
+
+                    let title =
+                        document.createElement(
+                            "h3"
+                        );
+
+
+                    title.innerText =
+                        note.title;
+
+
+                    let text =
+                        document.createElement(
+                            "p"
+                        );
+
+
+                    text.innerText =
+                        note.text;
+
+
+                    let deleteButton =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    deleteButton.innerText =
+                        "🗑️ Delete";
+
+
+                    deleteButton.onclick =
+                        function() {
+
+                            deleteNote(index);
+
+                        };
+
+
+                    card.appendChild(title);
+
+                    card.appendChild(text);
+
+                    card.appendChild(
+                        deleteButton
+                    );
+
+
+                    notesList.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+
+            let message =
+                document.getElementById(
+                    "noNotesMessage"
+                );
+
+
+            if (found === 0) {
+
+                message.style.display =
+                    "block";
+
+            } else {
+
+                message.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        function searchNotes() {
+
+            let searchText =
+                document.getElementById(
+                    "noteSearch"
+                ).value;
+
+
+            displayNotes(
+                searchText
+            );
+
+        }
+
+
+        function deleteNote(index) {
+
+            let notes =
+                getData(
+                    "myStudyNotes",
+                    []
+                );
+
+
+            notes.splice(
+                index,
+                1
+            );
+
+
+            saveData(
+                "myStudyNotes",
+                notes
+            );
+
+
+            displayNotes(
+                document.getElementById(
+                    "noteSearch"
+                ).value
+            );
+
+        }
+
+
+        /* =========================
+           TOPIC PROGRESS
+        ========================= */
+
+        function loadTopics() {
+
+            let completed =
+                getData(
+                    "completedTopics",
+                    []
+                );
+
+
+            let checkboxes =
+                document.querySelectorAll(
+                    ".topic-checkbox"
+                );
+
+
+            checkboxes.forEach(
+                function(box) {
+
+                    box.checked =
+                        completed.includes(
+                            box.value
+                        );
+
+                    box.addEventListener(
+                        "change",
+                        saveTopics
+                    );
+
+                }
+            );
+
+
+            updateTopicProgress();
+
+        }
+
+
+        function saveTopics() {
+
+            let completed = [];
+
+
+            document.querySelectorAll(
+                ".topic-checkbox"
+            ).forEach(
+                function(box) {
+
+                    if (box.checked) {
+
+                        completed.push(
+                            box.value
+                        );
+
+                    }
+
+                }
+            );
+
+
+            saveData(
+                "completedTopics",
+                completed
+            );
+
+
+            updateTopicProgress();
+
+        }
+
+
+        function updateTopicProgress() {
+
+            let boxes =
+                document.querySelectorAll(
+                    ".topic-checkbox"
+                );
+
+
+            let completed =
+                document.querySelectorAll(
+                    ".topic-checkbox:checked"
+                ).length;
+
+
+            let total =
+                boxes.length;
+
+
+            let percentage =
+                total === 0
+                ? 0
+                : (completed / total) * 100;
+
+
+            document.getElementById(
+                "topicsCompleted"
+            ).innerText =
+                completed;
+
+
+            document.getElementById(
+                "topicProgressBar"
+            ).style.width =
+                percentage + "%";
+
+        }
+
+
+        /* =========================
+           MCQ
+        ========================= */
+
+        let currentQuestion = 0;
+
+
+        let mcqQuestions =
+            document.querySelectorAll(
+                ".mcq-question"
+            );
+
+
+        function showQuestion(index) {
+
+            mcqQuestions.forEach(
+                function(question) {
+
+                    question.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            mcqQuestions[index]
+                .classList.add(
+                    "active"
+                );
+
+
+            document.getElementById(
+                "questionCounter"
+            ).innerText =
+                "Q " +
+                (index + 1) +
+                " / " +
+                mcqQuestions.length;
+
+        }
+
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                mcqQuestions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                showQuestion(
+                    currentQuestion
+                );
+
+            }
+
+        }
+
+
+        function previousQuestion() {
+
+            if (
+                currentQuestion > 0
+            ) {
+
+                currentQuestion--;
+
+                showQuestion(
+                    currentQuestion
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           MCQ RESULT
+        ========================= */
+
+        function checkAnswers() {
+
+            let correctAnswers = {
+
+                q1: "B",
+                q2: "B",
+                q3: "A",
+                q4: "C",
+                q5: "C",
+                q6: "A",
+                q7: "C",
+                q8: "B",
+                q9: "B",
+                q10: "C"
+
+            };
+
+
+            let score = 0;
+
+
+            for (
+                let question in correctAnswers
+            ) {
+
+                let selected =
+                    document.querySelector(
+                        'input[name="' +
+                        question +
+                        '"]:checked'
+                    );
+
+
+                if (
+                    selected &&
+                    selected.value ===
+                    correctAnswers[question]
+                ) {
+
+                    score++;
+
+                }
+
+            }
+
+
+            let wrong =
+                10 - score;
+
+
+            let percentage =
+                score * 10;
+
+
+            let performance = "";
+
+
+            if (score === 10) {
+
+                performance =
+                    "🏆 Excellent! Perfect Score!";
+
+            }
+
+            else if (score >= 8) {
+
+                performance =
+                    "🌟 Excellent work! Keep it up!";
+
+            }
+
+            else if (score >= 6) {
+
+                performance =
+                    "👍 Good Job! Keep improving!";
+
+            }
+
+            else if (score >= 4) {
+
+                performance =
+                    "📚 Good effort! Keep practicing!";
+
+            }
+
+            else {
+
+                performance =
+                    "💪 Don't Give Up! Try Again!";
+
+            }
+
+
+            document.getElementById(
+                "finalScore"
+            ).innerText =
+                "🎯 Score: " +
+                score +
+                " / 10";
+
+
+            document.getElementById(
+                "finalDetails"
+            ).innerText =
+                "✅ Correct: " +
+                score +
+                "   ❌ Wrong: " +
+                wrong +
+                "   📊 Percentage: " +
+                percentage +
+                "%";
+
+
+            document.getElementById(
+                "finalPerformance"
+            ).innerText =
+                performance;
+
+
+            document.getElementById(
+                "resultBox"
+            ).style.display =
+                "block";
+
+
+            /* SAVE MCQ DATA */
+
+            let previousBest =
+                getData(
+                    "bestScore",
+                    0
+                );
+
+
+            let totalSolved =
+                getData(
+                    "mcqsSolved",
+                    0
+                );
+
+
+            totalSolved += 10;
+
+
+            if (
+                score >
+                previousBest
+            ) {
+
+                previousBest =
+                    score;
+
+            }
+
+
+            saveData(
+                "bestScore",
+                previousBest
+            );
+
+
+            saveData(
+                "lastScore",
+                score
+            );
+
+
+            saveData(
+                "lastPercentage",
+                percentage
+            );
+
+
+            saveData(
+                "mcqsSolved",
+                totalSolved
+            );
+
+
+            updateDashboard();
+
+        }
+
+
+        /* =========================
+           DASHBOARD
+        ========================= */
+
+        function updateDashboard() {
+
+            let sessions =
+                getData(
+                    "studySessions",
+                    0
+                );
+
+
+            let minutes =
+                getData(
+                    "studyMinutes",
+                    0
+                );
+
+
+            let mcqs =
+                getData(
+                    "mcqsSolved",
+                    0
+                );
+
+
+            let best =
+                getData(
+                    "bestScore",
+                    0
+                );
+
+
+            let last =
+                getData(
+                    "lastScore",
+                    null
+                );
+
+
+            let percentage =
+                getData(
+                    "lastPercentage",
+                    null
+                );
+
+
+            document.getElementById(
+                "dashboardSessions"
+            ).innerText =
+                sessions;
+
+
+            document.getElementById(
+                "dashboardStudyTime"
+            ).innerText =
+                minutes +
+                " Minutes";
+
+
+            document.getElementById(
+                "dashboardMCQs"
+            ).innerText =
+                mcqs;
+
+
+            document.getElementById(
+                "dashboardBestScore"
+            ).innerText =
+                best +
+                " / 10";
+
+
+            if (last === null) {
+
+                document.getElementById(
+                    "dashboardLastScore"
+                ).innerText =
+                    "Not attempted";
+
+                document.getElementById(
+                    "dashboardPercentage"
+                ).innerText =
+                    "--";
+
+            } else {
+
+                document.getElementById(
+                    "dashboardLastScore"
+                ).innerText =
+                    last +
+                    " / 10";
+
+                document.getElementById(
+                    "dashboardPercentage"
+                ).innerText =
+                    percentage +
+                    "%";
+
+            }
+
+
+            updateDailyGoal(
+                minutes
+            );
+
+        }
+
+
+        function updateDailyGoal(
+            totalMinutes
+        ) {
+
+            let goalMinutes =
+                120;
+
+
+            let completed =
+                Math.min(
+                    totalMinutes,
+                    goalMinutes
+                );
+
+
+            let remaining =
+                goalMinutes -
+                completed;
+
+
+            let completedHours =
+                completed / 60;
+
+
+            let remainingHours =
+                remaining / 60;
+
+
+            let percentage =
+                (completed /
+                goalMinutes) * 100;
+
+
+            document.getElementById(
+                "goalCompleted"
+            ).innerText =
+                "Completed: " +
+                completedHours.toFixed(2) +
+                " Hours";
+
+
+            document.getElementById(
+                "goalRemaining"
+            ).innerText =
+                "Remaining: " +
+                remainingHours.toFixed(2) +
+                " Hours";
+
+
+            document.getElementById(
+                "dailyProgressBar"
+            ).style.width =
+                percentage + "%";
+
+        }
+
+
+        /* =========================
+           STARTUP
+        ========================= */
+
+        loadDarkMode();
+
+        updateTimer();
+
+        displayNotes();
+
+        loadTopics();
+
+        updateDashboard();
+
+        showQuestion(0);
+
+    </script>
+
+
+</body>
+
+</html>
