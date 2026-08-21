@@ -61,6 +61,10 @@ const questionBanks: Record<string, Question[]> = {
     { id: 4, question: 'डॉ. बी. आर. अम्बेडकर ने किस अनुच्छेद को “heart and soul” कहा था?', options: ['अनुच्छेद 14', 'अनुच्छेद 19', 'अनुच्छेद 32', 'अनुच्छेद 21'], answer: 2, hint: 'It lets citizens approach the Supreme Court.' },
     { id: 5, question: 'मौलिक अधिकार संविधान के किस भाग में हैं?', options: ['भाग I', 'भाग II', 'भाग III', 'भाग IV'], answer: 2, hint: 'Directive Principles follow in the next part.' },
     { id: 6, question: 'अनुच्छेद 14 किस सिद्धांत से संबंधित है?', options: ['विधि के समक्ष समानता', 'धार्मिक स्वतंत्रता', 'संवैधानिक उपचार', 'शिक्षा का अधिकार'], answer: 0, hint: 'The law must see equals as equals.' },
+    { id: 7, question: 'भारतीय संविधान में मौलिक अधिकार किस भाग में हैं?', options: ['भाग II', 'भाग III', 'भाग IV', 'भाग V'], answer: 1, hint: 'They are placed in Part III, covering Articles 12–35.' },
+    { id: 8, question: 'अनुच्छेद 21 किससे संबंधित है?', options: ['समानता का अधिकार', 'जीवन और व्यक्तिगत स्वतंत्रता', 'धार्मिक स्वतंत्रता', 'संवैधानिक उपचार'], answer: 1, hint: 'It protects life and personal liberty.' },
+    { id: 9, question: 'कानून के समक्ष समानता किस अनुच्छेद में है?', options: ['अनुच्छेद 12', 'अनुच्छेद 14', 'अनुच्छेद 19', 'अनुच्छेद 21'], answer: 1, hint: 'Article 14 establishes equality before law.' },
+    { id: 10, question: 'मौलिक अधिकारों का संरक्षक किसे माना जाता है?', options: ['संसद', 'राष्ट्रपति', 'सर्वोच्च न्यायालय', 'चुनाव आयोग'], answer: 2, hint: 'It protects rights through judicial review and constitutional remedies.' },
   ],
   History: [
     { id: 101, question: 'भारतीय राष्ट्रीय कांग्रेस की स्थापना किस वर्ष हुई थी?', options: ['1885', '1905', '1919', '1942'], answer: 0, hint: 'The first session was held in Bombay.' },

@@ -1,0 +1,122 @@
+<!-- Q7 -->
+
+<div class="mcq-question">
+
+    <h3>
+        Q7. भारतीय संविधान में मौलिक अधिकार किस भाग में हैं?
+    </h3>
+
+    <label>
+        <input type="radio" name="q7" value="A">
+        A. भाग II
+    </label>
+
+    <label>
+        <input type="radio" name="q7" value="B">
+        B. भाग III
+    </label>
+
+    <label>
+        <input type="radio" name="q7" value="C">
+        C. भाग IV
+    </label>
+
+    <label>
+        <input type="radio" name="q7" value="D">
+        D. भाग V
+    </label>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="mcq-question">
+
+    <h3>
+        Q8. अनुच्छेद 21 किससे संबंधित है?
+    </h3>
+
+    <label>
+        <input type="radio" name="q8" value="A">
+        A. समानता का अधिकार
+    </label>
+
+    <label>
+        <input type="radio" name="q8" value="B">
+        B. जीवन और व्यक्तिगत स्वतंत्रता
+    </label>
+
+    <label>
+        <input type="radio" name="q8" value="C">
+        C. धार्मिक स्वतंत्रता
+    </label>
+
+    <label>
+        <input type="radio" name="q8" value="D">
+        D. संवैधानिक उपचार
+    </label>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="mcq-question">
+
+    <h3>
+        Q9. कानून के समक्ष समानता किस अनुच्छेद में है?
+    </h3>
+
+    <label>
+        <input type="radio" name="q9" value="A">
+        A. अनुच्छेद 12
+    </label>
+
+    <label>
+        <input type="radio" name="q9" value="B">
+        B. अनुच्छेद 14
+    </label>
+
+    <label>
+        <input type="radio" name="q9" value="C">
+        C. अनुच्छेद 19
+    </label>
+
+    <label>
+        <input type="radio" name="q9" value="D">
+        D. अनुच्छेद 21
+    </label>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="mcq-question">
+
+    <h3>
+        Q10. मौलिक अधिकारों का संरक्षक किसे माना जाता है?
+    </h3>
+
+    <label>
+        <input type="radio" name="q10" value="A">
+        A. संसद
+    </label>
+
+    <label>
+        <input type="radio" name="q10" value="B">
+        B. राष्ट्रपति
+    </label>
+
+    <label>
+        <input type="radio" name="q10" value="C">
+        C. सर्वोच्च न्यायालय
+    </label>
+
+    <label>
+        <input type="radio" name="q10" value="D">
+        D. चुनाव आयोग
+    </label>
+
+</div>
