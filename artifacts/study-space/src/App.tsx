@@ -87,11 +87,27 @@ const questionBanks: Record<string, Question[]> = {
 { id: 20, question: 'अनुच्छेद 13 के अनुसार मौलिक अधिकारों के विरुद्ध कानूनों की स्थिति क्या होगी?', options: ['वे हमेशा पूरी तरह वैध रहेंगे', 'वे उस सीमा तक अमान्य होंगे जिस सीमा तक वे मौलिक अधिकारों के विरुद्ध हैं', 'वे केवल राष्ट्रपति की अनुमति से वैध होंगे', 'वे केवल राज्यों में लागू होंगे'], answer: 1, hint: 'Invalidity applies to the extent of inconsistency with Fundamental Rights.' },
   ],
 
-  History: [
-    { id: 101, question: 'भारतीय राष्ट्रीय कांग्रेस की स्थापना किस वर्ष हुई थी?', options: ['1885', '1905', '1919', '1942'], answer: 0, hint: 'The first session was held in Bombay.' },
-    { id: 102, question: 'भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?', options: ['1930', '1935', '1942', '1947'], answer: 2, hint: 'The call was “Do or Die”.' },
-    { id: 103, question: 'स्थायी बंदोबस्त किसने लागू किया था?', options: ['लॉर्ड कर्जन', 'लॉर्ड कॉर्नवालिस', 'लॉर्ड रिपन', 'लॉर्ड वेलेजली'], answer: 1, hint: 'It began under a Governor-General of the East India Company.' },
-  ],
+History: [
+  { id: 21, question: 'हड़प्पा सभ्यता का नाम “Harappan Civilization” क्यों पड़ा?', options: ['हड़प्पा इसकी राजधानी थी', 'हड़प्पा वह पहला पहचाना गया स्थल था जिसके आधार पर समान पुरातात्त्विक संस्कृति के अन्य स्थलों को Harappan कहा गया', 'हड़प्पा सबसे बड़ा स्थल था', 'हड़प्पा में सबसे अधिक मोहरें मिलीं'], answer: 1, hint: 'The civilization was named after the site of Harappa.' },
+
+  { id: 22, question: 'मोहनजोदड़ो किसके लिए विशेष रूप से प्रसिद्ध है?', options: ['लोहे के औजार', 'Great Bath', 'अशोक के शिलालेख', 'बौद्ध स्तूप'], answer: 1, hint: 'Think of the famous public bathing structure.' },
+
+  { id: 23, question: 'धोलावीरा किस विशेषता के लिए विशेष रूप से जाना जाता है?', options: ['विशाल लौह-उद्योग', 'उन्नत जल-संचयन और जल-प्रबंधन', 'गुप्तकालीन मंदिर', 'अशोक स्तंभ'], answer: 1, hint: 'Think of reservoirs and water management.' },
+
+  { id: 24, question: 'निम्न में से कौन-सा हड़प्पा स्थल गुजरात में स्थित है?', options: ['हड़प्पा', 'मोहनजोदड़ो', 'लोथल', 'कालीबंगा'], answer: 2, hint: 'This site is associated with maritime trade and Gujarat.' },
+
+  { id: 25, question: 'कालीबंगा किस वर्तमान राज्य में स्थित है?', options: ['गुजरात', 'हरियाणा', 'राजस्थान', 'पंजाब'], answer: 2, hint: 'It is located in north-western India.' },
+
+  { id: 26, question: 'राखीगढ़ी किस वर्तमान राज्य में स्थित प्रमुख हड़प्पा स्थल है?', options: ['हरियाणा', 'राजस्थान', 'गुजरात', 'उत्तर प्रदेश'], answer: 0, hint: 'Think of a major Harappan site in Haryana.' },
+
+  { id: 27, question: 'हड़प्पा नगरों की प्रमुख विशेषताओं में से एक क्या थी?', options: ['व्यवस्थित नगर नियोजन और जल-निकासी', 'केवल लकड़ी के मकान', 'केवल गुफा-आवास', 'लोहे के विशाल दुर्ग'], answer: 0, hint: 'Planned streets and drainage were important features.' },
+
+  { id: 28, question: 'हड़प्पा सभ्यता की लिपि के बारे में वर्तमान स्थिति क्या है?', options: ['पूरी तरह पढ़ ली गई है', 'केवल संस्कृत में लिखी गई थी', 'अभी तक पूरी तरह decipher नहीं हुई है', 'केवल अशोक ने इसका प्रयोग किया'], answer: 2, hint: 'The script remains undeciphered.' },
+
+  { id: 29, question: 'निम्न में से कौन-सा हड़प्पा सभ्यता का प्रमुख स्थल है?', options: ['धोलावीरा', 'नालंदा', 'सारनाथ', 'पाटलिपुत्र'], answer: 0, hint: 'This is a major Harappan site in Gujarat.' },
+
+  { id: 30, question: 'हड़प्पा सभ्यता की पहचान के लिए निम्न में से कौन-सा संयोजन सबसे उपयुक्त है?', options: ['नगर नियोजन + जल-निकासी + विकसित शिल्प', 'लौह तकनीक + अशोक के शिलालेख', 'बौद्ध विहार + स्तूप', 'मंदिर वास्तुकला + संस्कृत अभिलेख'], answer: 0, hint: 'Think of the defining archaeological features of Harappan urban culture.' },
+  ],  
   Geography: [
     { id: 201, question: 'भारत में सबसे लंबी तटरेखा वाला राज्य कौन सा है?', options: ['महाराष्ट्र', 'तमिलनाडु', 'गुजरात', 'आंध्र प्रदेश'], answer: 2, hint: 'Look to the north-western coast.' },
     { id: 202, question: 'कर्क रेखा भारत के कितने राज्यों से होकर गुजरती है?', options: ['6', '8', '10', '12'], answer: 1, hint: 'It crosses from Gujarat to Mizoram.' },
