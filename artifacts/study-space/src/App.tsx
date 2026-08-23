@@ -65,7 +65,28 @@ const questionBanks: Record<string, Question[]> = {
     { id: 8, question: 'अनुच्छेद 21 किससे संबंधित है?', options: ['समानता का अधिकार', 'जीवन और व्यक्तिगत स्वतंत्रता', 'धार्मिक स्वतंत्रता', 'संवैधानिक उपचार'], answer: 1, hint: 'It protects life and personal liberty.' },
     { id: 9, question: 'कानून के समक्ष समानता किस अनुच्छेद में है?', options: ['अनुच्छेद 12', 'अनुच्छेद 14', 'अनुच्छेद 19', 'अनुच्छेद 21'], answer: 1, hint: 'Article 14 establishes equality before law.' },
     { id: 10, question: 'मौलिक अधिकारों का संरक्षक किसे माना जाता है?', options: ['संसद', 'राष्ट्रपति', 'सर्वोच्च न्यायालय', 'चुनाव आयोग'], answer: 2, hint: 'It protects rights through judicial review and constitutional remedies.' },
+
+{ id: 11, question: 'अनुच्छेद 12 में “State” की परिभाषा किस संदर्भ में दी गई है?', options: ['मौलिक अधिकारों के संदर्भ में', 'नीति-निर्देशक तत्वों के संदर्भ में', 'चुनावों के संदर्भ में', 'आपातकाल के संदर्भ में'], answer: 0, hint: 'Article 12 defines State for Part III.' },
+
+{ id: 12, question: 'अनुच्छेद 12 के अंतर्गत निम्नलिखित में से कौन “State” में शामिल है?', options: ['भारत सरकार और संसद', 'केवल निजी कंपनियाँ', 'केवल राजनीतिक दल', 'केवल विदेशी सरकारें'], answer: 0, hint: 'Think of the Union government and Parliament.' },
+
+{ id: 13, question: 'अनुच्छेद 13 का मुख्य उद्देश्य क्या है?', options: ['उपाधियों को समाप्त करना', 'मौलिक अधिकारों के विरुद्ध कानूनों को उस सीमा तक अमान्य करना', 'अस्पृश्यता समाप्त करना', 'लोक नियोजन में अवसर देना'], answer: 1, hint: 'It protects Fundamental Rights against inconsistent laws.' },
+
+{ id: 14, question: 'अनुच्छेद 14 प्रत्येक व्यक्ति को क्या प्रदान करता है?', options: ['केवल धार्मिक स्वतंत्रता', 'कानून के समक्ष समानता और कानूनों का समान संरक्षण', 'केवल शिक्षा का अधिकार', 'केवल संपत्ति का अधिकार'], answer: 1, hint: 'Article 14 contains two expressions of equality.' },
+
+{ id: 15, question: 'अनुच्छेद 15 के अनुसार राज्य किन आधारों पर भेदभाव नहीं कर सकता?', options: ['धर्म, मूलवंश, जाति, लिंग और जन्मस्थान', 'केवल आय', 'केवल भाषा', 'केवल आयु'], answer: 0, hint: 'Remember the specific grounds listed in Article 15.' },
+
+{ id: 16, question: 'अनुच्छेद 16 किससे संबंधित है?', options: ['धार्मिक स्वतंत्रता', 'लोक नियोजन में अवसर की समानता', 'अस्पृश्यता का उन्मूलन', 'उपाधियों का उन्मूलन'], answer: 1, hint: 'It concerns equality of opportunity in public employment.' },
+
+{ id: 17, question: 'अनुच्छेद 17 किसका उन्मूलन करता है?', options: ['उपाधियों का', 'अस्पृश्यता का', 'भेदभाव का', 'गरीबी का'], answer: 1, hint: 'Its subject is Untouchability.' },
+
+{ id: 18, question: 'अनुच्छेद 18 के अंतर्गत राज्य किन distinctions को बनाए रख सकता है?', options: ['सैन्य या शैक्षणिक distinction', 'केवल राजनीतिक distinction', 'केवल आर्थिक distinction', 'किसी भी प्रकार की उपाधि'], answer: 0, hint: 'Article 18 makes an exception for military and academic distinctions.' },
+
+{ id: 19, question: 'अनुच्छेद 15 में किनके लिए विशेष प्रावधान की अनुमति है?', options: ['महिलाओं, बच्चों तथा सामाजिक और शैक्षिक रूप से पिछड़े वर्गों आदि के लिए', 'केवल सरकारी कर्मचारियों के लिए', 'केवल विदेशी नागरिकों के लिए', 'केवल सांसदों के लिए'], answer: 0, hint: 'Article 15 permits certain special provisions for specified groups.' },
+
+{ id: 20, question: 'अनुच्छेद 13 के अनुसार मौलिक अधिकारों के विरुद्ध कानूनों की स्थिति क्या होगी?', options: ['वे हमेशा पूरी तरह वैध रहेंगे', 'वे उस सीमा तक अमान्य होंगे जिस सीमा तक वे मौलिक अधिकारों के विरुद्ध हैं', 'वे केवल राष्ट्रपति की अनुमति से वैध होंगे', 'वे केवल राज्यों में लागू होंगे'], answer: 1, hint: 'Invalidity applies to the extent of inconsistency with Fundamental Rights.' },
   ],
+
   History: [
     { id: 101, question: 'भारतीय राष्ट्रीय कांग्रेस की स्थापना किस वर्ष हुई थी?', options: ['1885', '1905', '1919', '1942'], answer: 0, hint: 'The first session was held in Bombay.' },
     { id: 102, question: 'भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?', options: ['1930', '1935', '1942', '1947'], answer: 2, hint: 'The call was “Do or Die”.' },
