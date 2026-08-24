@@ -16,8 +16,8 @@
   --plum: #75566e;
   --line: #d9d5ca;
   --card: #fbfaf6;
-  --app-font-sans: 'DM Sans', 'Noto Sans Devanagari', sans-serif;
-  --app-font-serif: 'Cormorant Garamond', 'Noto Sans Devanagari', serif;
+ --app-font-sans: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+ --app-font-serif: 'Noto Sans Devanagari', 'Cormorant Garamond', serif;
   --app-font-mono: 'DM Mono', monospace;
   --background: 42 29% 95%;
   --foreground: 198 30% 17%;
