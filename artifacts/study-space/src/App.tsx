@@ -174,6 +174,93 @@ function shuffleQuestions(list: Question[]) {
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+function NoteBody({ body }: { body: string }) {
+  const lines = body.split('\n');
+  const elements: React.ReactNode[] = [];
+
+  let inImportant = false;
+
+  lines.forEach((rawLine, index) => {
+    const line = rawLine.trim();
+
+    if (!line) {
+      elements.push(<div key={`space-${index}`} className="note-space" />);
+      return;
+    }
+
+    // Main numbered headings: 1. ..., 2. ..., 3. ...
+    const headingMatch = line.match(/^(\d+)\.\\?\s*(.+)$/);
+
+    if (headingMatch) {
+      inImportant = false;
+      elements.push(
+        <h4 key={`heading-${index}`} className="note-section-heading">
+          <span>{headingMatch[1]}.</span> {headingMatch[2]}
+        </h4>
+      );
+      return;
+    }
+
+    // Important exam section
+    if (line.startsWith('🧠')) {
+      inImportant = true;
+      elements.push(
+        <div key={`important-title-${index}`} className="note-important-title">
+          {line}
+        </div>
+      );
+      return;
+    }
+
+    // Subheadings
+    if (
+      line === 'मुख्य बातें:' ||
+      line === 'जीवन के लिए प्रमुख आवश्यकताएँ:' ||
+      line.startsWith('(क)') ||
+      line.startsWith('(ख)') ||
+      line === 'सूर्य:'
+    ) {
+      elements.push(
+        <div key={`subheading-${index}`} className="note-subheading">
+          {line}
+        </div>
+      );
+      return;
+    }
+
+    // Important facts table rows
+    if (inImportant && line.includes('\t')) {
+      const [question, answer] = line.split('\t');
+
+      elements.push(
+        <div key={`fact-${index}`} className="note-fact-row">
+          <span>{question}</span>
+          <strong>{answer}</strong>
+        </div>
+      );
+      return;
+    }
+
+    // Arrow / sequence line
+    if (line.includes('→')) {
+      elements.push(
+        <div key={`sequence-${index}`} className="note-sequence">
+          {line}
+        </div>
+      );
+      return;
+    }
+
+    // Regular content
+    elements.push(
+      <p key={`para-${index}`} className="note-paragraph">
+        {line}
+      </p>
+    );
+  });
+
+  return <div className="note-body">{elements}</div>;
+}
 
 function BrandMark() {
   return <div className="brand-mark" aria-hidden="true"><span>SS</span><i /></div>;
@@ -392,7 +479,7 @@ function App() {
           <section id="notes" className="workspace-section notes-section" aria-labelledby="notes-title">
             <div className="section-heading"><div><p className="eyebrow">Your second brain</p><h2 id="notes-title">Notes worth returning to.</h2></div><span className="section-number">05 / 07</span></div>
             <div className="notes-layout"><form className="note-form" onSubmit={addNote}><div className="note-form-heading"><NotebookPen size={19} /><span>New note</span><small>Saved locally</small></div><label><span>Title</span><input value={noteTitle} onChange={(event) => setNoteTitle(event.target.value)} placeholder="e.g. Article 21 in one line" data-testid="input-note-title" /></label><label><span>Subject</span><select value={noteSubject} onChange={(event) => setNoteSubject(event.target.value)} data-testid="select-note-subject">{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.label} · {subject.hindi}</option>)}</select></label><label><span>Your thought</span><textarea value={noteBody} onChange={(event) => setNoteBody(event.target.value)} placeholder="Write the idea in your own words..." rows={5} data-testid="input-note-body" /></label><button className="button button-primary note-submit" type="submit" data-testid="button-add-note"><Plus size={16} /> Add note</button></form><div className="notes-library"><div className="library-top"><div><span className="eyebrow">Library <b>{notes.length}</b></span><strong>Recent fragments</strong></div><label className="search-field"><Search size={16} /><input type="search" value={noteSearch} onChange={(event) => setNoteSearch(event.target.value)} placeholder="Search your notes" data-testid="input-note-search" /></label></div><div className="note-filters" role="group" aria-label="Filter notes by subject"><button className={noteFilter === 'All' ? 'active' : ''} onClick={() => setNoteFilter('All')} data-testid="button-filter-notes-all">All <span>{notes.length}</span></button>{subjects.map((subject) => <button key={subject.id} className={noteFilter === subject.id ? 'active' : ''} onClick={() => setNoteFilter(subject.id)} data-testid={`button-filter-notes-${subject.id.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`}>{subject.label}</button>)}</div>{filteredNotes.length === 0 ? <div className="empty-state"><FileText size={26} /><strong>No notes found</strong><p>Try another phrase, or make a new note on the left.</p></div> : <div className="notes-list">{filteredNotes.map((note) => <article className="note-card" key={note.id} data-testid={`card-note-${note.id}`}><div className="note-card-top"><span>{note.createdAt}</span><button className="delete-button" onClick={() => setNotes((current) => current.filter((item) => item.id !== note.id))} data-testid={`button-delete-note-${note.id}`} aria-label={`Delete ${note.title}`}><Trash2 size={15} /></button></div><span className="note-subject-chip">{note.subject}</span><h3>{note.title}</h3>
-<p className="note-body">{note.body}</p>
+<NoteBody body={note.body} />
 
 
 {note.subject === 'History' &&
