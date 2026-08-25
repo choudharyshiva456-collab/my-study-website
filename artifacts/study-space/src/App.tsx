@@ -130,11 +130,31 @@ History: [
   { id: 40, question: 'Q40. एक विद्यार्थी कहता है— "पृथ्वी की सूर्य से उचित दूरी होने के कारण ही पृथ्वी पर जीवन संभव है।" इस कथन के बारे में सबसे उपयुक्त उत्तर क्या है?', options: ['कथन पूर्णतः सही है; केवल दूरी ही पर्याप्त है।', 'कथन गलत है; दूरी का कोई महत्व नहीं है।', 'दूरी महत्वपूर्ण है, लेकिन जल, वायुमंडल और अन्य अनुकूल परिस्थितियाँ भी आवश्यक हैं।', 'केवल पृथ्वी का आकार जीवन के लिए जिम्मेदार है।'], answer: 2, hint: 'जीवन के लिए दूरी के साथ अन्य अनुकूल परिस्थितियाँ भी आवश्यक हैं।' },
 ],
 
-  Economy: [
-    { id: 301, question: 'भारतीय रिजर्व बैंक का मुख्य कार्य क्या है?', options: ['कर वसूलना', 'मौद्रिक नीति का संचालन', 'बजट प्रस्तुत करना', 'जनगणना करना'], answer: 1, hint: 'It steers money and credit in the economy.' },
-    { id: 302, question: 'GDP का अर्थ क्या है?', options: ['सकल घरेलू उत्पाद', 'कुल विकास योजना', 'सामान्य जमा नीति', 'सकल ऋण प्रावधान'], answer: 0, hint: 'It measures the value of final goods and services.' },
-    { id: 303, question: 'राजकोषीय घाटा किसके बीच का अंतर है?', options: ['निर्यात और आयात', 'सरकारी व्यय और कुल प्राप्तियाँ', 'बचत और निवेश', 'मांग और आपूर्ति'], answer: 1, hint: 'Think about the government’s annual accounts.' },
-  ],
+ Economy: [
+  { id: 301, question: 'भारतीय रिजर्व बैंक का मुख्य कार्य क्या है?', options: ['कर वसूलना', 'मौद्रिक नीति का संचालन', 'बजट प्रस्तुत करना', 'जनगणना करना'], answer: 1, hint: 'It steers money and credit in the economy.' },
+  { id: 302, question: 'GDP का अर्थ क्या है?', options: ['सकल घरेलू उत्पाद', 'कुल विकास योजना', 'सामान्य जमा नीति', 'सकल ऋण प्रावधान'], answer: 0, hint: 'It measures the value of final goods and services.' },
+  { id: 303, question: 'राजकोषीय घाटा किसके बीच का अंतर है?', options: ['निर्यात और आयात', 'सरकारी व्यय और कुल प्राप्तियाँ', 'बचत और निवेश', 'मांग और आपूर्ति'], answer: 1, hint: 'Think about the government’s annual accounts.' },
+
+  { id: 304, question: 'राष्ट्रीय आय से संबंधित निम्नलिखित कथनों पर विचार कीजिए: 1. GDP देश की आर्थिक सीमा के भीतर होने वाले उत्पादन पर आधारित है। 2. GNP में GDP के साथ विदेश से शुद्ध कारक आय का समायोजन किया जाता है। 3. GDP और GNP के बीच अंतर केवल depreciation के कारण होता है। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'GDP and GNP differ because of net factor income from abroad.' },
+
+  { id: 305, question: 'GVA के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. GVA को Output में से Intermediate Consumption घटाकर प्राप्त किया जाता है। 2. Product taxes में से product subsidies का शुद्ध प्रभाव जोड़ने पर GVA से GDP का संबंध स्थापित होता है। 3. GVA केवल कृषि क्षेत्र के उत्पादन को मापता है। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'GVA is used across economic sectors, not only agriculture.' },
+
+  { id: 306, question: 'निम्नलिखित में से किस स्थिति में उत्पादन भारत के GDP में शामिल हो सकता है?', options: ['भारतीय निवासी द्वारा अमेरिका में उत्पादन', 'जापानी कंपनी द्वारा भारत की आर्थिक सीमा के भीतर उत्पादन', 'भारतीय कंपनी द्वारा विदेश में उत्पादन', 'भारतीय नागरिक द्वारा विदेश में अर्जित वेतन'], answer: 1, hint: 'GDP follows the domestic territory principle.' },
+
+  { id: 307, question: 'निम्नलिखित कथनों पर विचार कीजिए: 1. NDP प्राप्त करने के लिए GDP में से depreciation घटाया जाता है। 2. NNP प्राप्त करने के लिए GNP में से depreciation घटाया जाता है। 3. “Net” का अर्थ है कि depreciation को ध्यान में रखा गया है। सही उत्तर है:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 3, hint: 'Gross minus depreciation gives Net.' },
+
+  { id: 308, question: 'यदि किसी अर्थव्यवस्था में Nominal GDP बढ़ती है, लेकिन Real GDP लगभग स्थिर रहती है, तो सबसे उपयुक्त निष्कर्ष क्या होगा?', options: ['वास्तविक उत्पादन में बहुत बड़ी वृद्धि हुई है।', 'केवल जनसंख्या में वृद्धि हुई है।', 'कीमतों में वृद्धि Nominal GDP की वृद्धि का महत्वपूर्ण कारण हो सकती है।', 'बेरोजगारी निश्चित रूप से घट गई है।'], answer: 2, hint: 'Nominal GDP reflects both prices and quantities.' },
+
+  { id: 309, question: 'GDP Deflator के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. यह Nominal GDP और Real GDP के अनुपात से निकाला जा सकता है। 2. यह domestic production से संबंधित व्यापक price measure है। 3. यह केवल उपभोक्ताओं द्वारा खरीदी जाने वाली वस्तुओं की कीमतों को मापता है। सही उत्तर है:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'GDP Deflator is broader than a consumer-only price index.' },
+
+  { id: 310, question: 'राष्ट्रीय आय को मापने के संदर्भ में निम्नलिखित में से कौन-से तीन प्रमुख approaches हैं? 1. Value Added Method 2. Income Method 3. Expenditure Method 4. Money Supply Method', options: ['केवल 1 और 2', 'केवल 1, 2 और 3', 'केवल 2, 3 और 4', '1, 2, 3 और 4'], answer: 1, hint: 'National income is measured through production, income and expenditure approaches.' },
+
+  { id: 311, question: 'यदि किसी अर्थव्यवस्था में Consumption बढ़ता है, Government expenditure बढ़ता है और Imports घटते हैं, जबकि Investment तथा Exports स्थिर रहते हैं, तो expenditure approach के अनुसार GDP पर संभावित प्रभाव क्या होगा?', options: ['GDP पर नकारात्मक दबाव', 'GDP पर सकारात्मक दबाव', 'GDP पर कोई प्रभाव नहीं', 'केवल Real GDP घटेगी'], answer: 1, hint: 'Consider Y = C + I + G + (X − M).' },
+
+  { id: 312, question: 'Final Goods और Intermediate Goods के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. GDP की गणना में final goods का उपयोग double counting से बचने में मदद करता है। 2. Intermediate goods को अलग-अलग stages पर जोड़ते जाने से एक ही उत्पादन का मूल्य कई बार गिना जा सकता है। 3. कोई वस्तु हमेशा final good या हमेशा intermediate good ही होती है। सही उत्तर है:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'The classification can depend on how the good is used.' },
+
+  { id: 313, question: 'एक देश में GDP तेजी से बढ़ रही है, लेकिन उसी अवधि में आय की असमानता और पर्यावरणीय क्षति भी बढ़ रही है। इस स्थिति से निम्नलिखित में से कौन-सा निष्कर्ष सबसे उचित है?', options: ['GDP बढ़ने का अर्थ है कि सभी नागरिकों का कल्याण निश्चित रूप से बढ़ा है।', 'GDP आर्थिक गतिविधि का महत्वपूर्ण indicator है, लेकिन यह welfare का पूर्ण माप नहीं है।', 'GDP में वृद्धि का अर्थ है कि inequality समाप्त हो गई है।', 'GDP बढ़ने पर environmental damage संभव नहीं है।'], answer: 1, hint: 'GDP is an important economic indicator, but not a complete measure of welfare.' },
+],
   Environment: [
     { id: 401, question: 'रामसर संधि किससे संबंधित है?', options: ['आर्द्रभूमि संरक्षण', 'वन्यजीव व्यापार', 'जलवायु वित्त', 'समुद्री सुरक्षा'], answer: 0, hint: 'The convention is named after a city in Iran.' },
     { id: 402, question: 'ओजोन परत मुख्यतः किस मंडल में पाई जाती है?', options: ['क्षोभमंडल', 'समतापमंडल', 'मध्यमंडल', 'बहिर्मंडल'], answer: 1, hint: 'It is above the weather-making layer.' },
