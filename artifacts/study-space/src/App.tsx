@@ -207,7 +207,7 @@ History: [
 
   { id: 513, question: 'एक नई technology laboratory में सफलतापूर्वक विकसित की गई है। लेकिन उसका बड़े स्तर पर उपयोग महँगा है, field conditions में पर्याप्त testing नहीं हुई है और आवश्यक infrastructure भी सीमित है। इस स्थिति से सबसे उचित निष्कर्ष क्या है?', options: ['Technology वैज्ञानिक रूप से असंभव है।', 'Technology को तुरंत nationwide deploy कर देना चाहिए।', 'Technology का proof-of-concept सफल हो सकता है, लेकिन व्यापक deployment से पहले validation, scalability, cost और infrastructure जैसी बाधाओं का समाधान आवश्यक है।', 'Technology innovation नहीं हो सकती क्योंकि वह laboratory में विकसित हुई है।'], answer: 2, hint: 'Successful laboratory development does not automatically mean large-scale deployment readiness.' },
 ],  
-}
+};
 
 const defaultNotes: Note[] = [
   { id: 1, title: 'Article 32 — the heart and soul', body: 'Dr. B. R. Ambedkar described Article 32 as the heart and soul of the Constitution. It makes Fundamental Rights enforceable through the Supreme Court.', subject: 'Polity', createdAt: 'Today' },
