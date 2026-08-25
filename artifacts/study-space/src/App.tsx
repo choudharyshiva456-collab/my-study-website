@@ -180,12 +180,34 @@ History: [
 
   { id: 413, question: 'एक तालाब में सूर्य का प्रकाश, जल, घुलित खनिज, शैवाल, मछलियाँ और सूक्ष्मजीव मौजूद हैं। इस उदाहरण के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. जल और घुलित खनिज अजैविक components हैं। 2. शैवाल और मछलियाँ जैविक components हैं। 3. इन सभी components के बीच interactions होने के कारण तालाब को ecosystem के रूप में देखा जा सकता है। 4. तालाब में energy और nutrients दोनों बिल्कुल एक ही तरीके से circulate करते हैं। सही उत्तर चुनिए:', options: ['केवल 1 और 2', 'केवल 1, 2 और 3', 'केवल 2, 3 और 4', '1, 2, 3 और 4'], answer: 1, hint: 'Energy flow and nutrient cycling are fundamentally different processes.' },
 ],
-  'Science & Tech': [
-    { id: 501, question: 'ISRO का मुख्यालय किस शहर में स्थित है?', options: ['चेन्नई', 'हैदराबाद', 'बेंगलुरु', 'नई दिल्ली'], answer: 2, hint: 'India’s space city.' },
-    { id: 502, question: 'CRISPR तकनीक का उपयोग मुख्यतः किसके लिए किया जाता है?', options: ['जीन संपादन', 'मौसम पूर्वानुमान', 'रॉकेट ईंधन', 'भूकंप मापन'], answer: 0, hint: 'It can make precise changes in DNA.' },
-    { id: 503, question: '5G में “G” किसका संक्षिप्त रूप है?', options: ['Global', 'Generation', 'Gateway', 'Graphical'], answer: 1, hint: 'It follows 4G.' },
-  ],
-};
+'Science & Tech': [
+  { id: 501, question: 'ISRO का मुख्यालय किस शहर में स्थित है?', options: ['चेन्नई', 'हैदराबाद', 'बेंगलुरु', 'नई दिल्ली'], answer: 2, hint: 'India’s space city.' },
+
+  { id: 502, question: 'CRISPR तकनीक का उपयोग मुख्यतः किसके लिए किया जाता है?', options: ['जीन संपादन', 'मौसम पूर्वानुमान', 'रॉकेट ईंधन', 'भूकंप मापन'], answer: 0, hint: 'It can make precise changes in DNA.' },
+
+  { id: 503, question: '5G में “G” किसका संक्षिप्त रूप है?', options: ['Global', 'Generation', 'Gateway', 'Graphical'], answer: 1, hint: 'It follows 4G.' },
+
+  { id: 504, question: 'विज्ञान और प्रौद्योगिकी के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. विज्ञान का प्रमुख उद्देश्य प्राकृतिक घटनाओं को समझने के लिए ज्ञान विकसित करना है। 2. प्रौद्योगिकी वैज्ञानिक ज्ञान के व्यावहारिक उपयोग से जुड़ी हो सकती है। 3. प्रत्येक technological development का आधार केवल scientific research ही होता है। सही उत्तर चुनिए:', options: ['केवल 1 और 2', 'केवल 1 और 3', 'केवल 2 और 3', '1, 2 और 3'], answer: 0, hint: 'Science develops knowledge, while technology can apply scientific knowledge.' },
+
+  { id: 505, question: 'Innovation के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. केवल नया विचार होना ही innovation के लिए पर्याप्त है। 2. किसी नए या बेहतर समाधान का practical application innovation का महत्वपूर्ण पहलू हो सकता है। 3. Innovation सामाजिक या आर्थिक समस्याओं के समाधान में योगदान दे सकता है। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 2, hint: 'Innovation involves practical implementation and value creation.' },
+
+  { id: 506, question: 'Basic Research और Applied Research के संदर्भ में निम्नलिखित में से कौन-सा सबसे उपयुक्त है?', options: ['Basic Research हमेशा तुरंत commercial product में बदल जाती है।', 'Applied Research का fundamental knowledge से कोई संबंध नहीं होता।', 'Basic Research fundamental understanding पर अधिक केंद्रित होती है, जबकि Applied Research किसी practical problem के समाधान की ओर अधिक उन्मुख हो सकती है।', 'दोनों में कोई अंतर नहीं है।'], answer: 2, hint: 'Basic research focuses more on fundamental understanding; applied research is more application-oriented.' },
+
+  { id: 507, question: 'किसी technology का laboratory में सफल prototype बन जाना निम्नलिखित में से किसका स्वतः प्रमाण नहीं है?', options: ['Technology का अस्तित्व', 'Technology का वैज्ञानिक आधार', 'Large-scale commercial deployment की readiness', 'Concept का परीक्षण'], answer: 2, hint: 'Large-scale deployment also requires validation, safety, scalability, cost and infrastructure.' },
+
+  { id: 508, question: 'Scientific Temper के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. यह किसी दावे को evidence और reasoning के आधार पर जाँचने की प्रवृत्ति है। 2. यह हर वैज्ञानिक hypothesis को बिना परीक्षण स्वीकार करने की अपेक्षा करता है। 3. Questioning और verification इसका हिस्सा हो सकते हैं। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 1 और 3', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'Scientific temper emphasizes questioning, evidence and verification.' },
+
+  { id: 509, question: 'निम्नलिखित में से कौन-सा Science–Technology–Innovation के संबंध को सबसे बेहतर दर्शाता है?', options: ['Science → केवल theory → कोई practical application नहीं', 'Technology → हमेशा Science से स्वतंत्र', 'Scientific knowledge → technological development → application/innovation; साथ ही technological challenges नई research को प्रेरित कर सकते हैं', 'Innovation → केवल commercial activity'], answer: 2, hint: 'The relationship can work in both directions between research and technological challenges.' },
+
+  { id: 510, question: 'R&D के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. Research नए knowledge या understanding के विकास से संबंधित हो सकती है। 2. Development मौजूदा knowledge को useful products, processes या technologies में आगे विकसित करने से जुड़ा हो सकता है। 3. R&D का उद्देश्य केवल academic publications प्रकाशित करना है। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'R&D includes both research and development toward useful applications.' },
+
+  { id: 511, question: 'निम्नलिखित में से कौन-सा Emerging Technologies का सबसे उपयुक्त समूह है?', options: ['Quantum Technology, Artificial Intelligence, Robotics और Biotechnology', 'केवल पारंपरिक कृषि उपकरण', 'केवल basic laboratory instruments', 'केवल transportation infrastructure'], answer: 0, hint: 'These are examples of rapidly developing and strategically important technology areas.' },
+
+  { id: 512, question: 'Technology development में Industry–Academia collaboration का सबसे महत्वपूर्ण संभावित लाभ क्या है?', options: ['Academic research को समाप्त करना', 'Research knowledge और industrial application/manufacturing capabilities को जोड़ना', 'केवल government funding पर निर्भर रहना', 'Fundamental research को रोक देना'], answer: 1, hint: 'Academia contributes knowledge and research; industry contributes application and deployment capabilities.' },
+
+  { id: 513, question: 'एक नई technology laboratory में सफलतापूर्वक विकसित की गई है। लेकिन उसका बड़े स्तर पर उपयोग महँगा है, field conditions में पर्याप्त testing नहीं हुई है और आवश्यक infrastructure भी सीमित है। इस स्थिति से सबसे उचित निष्कर्ष क्या है?', options: ['Technology वैज्ञानिक रूप से असंभव है।', 'Technology को तुरंत nationwide deploy कर देना चाहिए।', 'Technology का proof-of-concept सफल हो सकता है, लेकिन व्यापक deployment से पहले validation, scalability, cost और infrastructure जैसी बाधाओं का समाधान आवश्यक है।', 'Technology innovation नहीं हो सकती क्योंकि वह laboratory में विकसित हुई है।'], answer: 2, hint: 'Successful laboratory development does not automatically mean large-scale deployment readiness.' },
+],  
+
 
 const defaultNotes: Note[] = [
   { id: 1, title: 'Article 32 — the heart and soul', body: 'Dr. B. R. Ambedkar described Article 32 as the heart and soul of the Constitution. It makes Fundamental Rights enforceable through the Supreme Court.', subject: 'Polity', createdAt: 'Today' },
