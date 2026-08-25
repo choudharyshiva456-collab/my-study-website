@@ -295,3 +295,119 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     font-size: 20px;
   }
 }
+/* =========================================
+   PROFESSIONAL STUDY NOTES
+========================================= */
+
+.note-body {
+  font-family: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+  color: var(--ink);
+}
+
+.note-section-heading {
+  margin: 24px 0 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--saffron);
+  color: var(--navy);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.note-section-heading span {
+  color: var(--saffron);
+}
+
+.note-paragraph {
+  margin: 0 0 11px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.note-subheading {
+  margin: 17px 0 8px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.note-sequence {
+  margin: 14px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--paper-deep);
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.note-important-title {
+  margin: 28px 0 12px;
+  padding: 13px 15px;
+  border-left: 4px solid var(--saffron);
+  background: var(--saffron-soft);
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.note-fact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  background: var(--card);
+}
+
+.note-fact-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.note-fact-row span,
+.note-fact-row strong {
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.note-fact-row span {
+  color: var(--ink-soft);
+  border-right: 1px solid var(--line);
+}
+
+.note-fact-row strong {
+  color: var(--navy);
+}
+
+.note-space {
+  height: 5px;
+}
+
+@media (max-width: 700px) {
+  .note-section-heading {
+    margin-top: 21px;
+    font-size: 18px;
+  }
+
+  .note-paragraph {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .note-fact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .note-fact-row span {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .note-sequence {
+    font-size: 14px;
+  }
+}
