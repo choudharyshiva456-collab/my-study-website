@@ -155,11 +155,31 @@ History: [
 
   { id: 313, question: 'एक देश में GDP तेजी से बढ़ रही है, लेकिन उसी अवधि में आय की असमानता और पर्यावरणीय क्षति भी बढ़ रही है। इस स्थिति से निम्नलिखित में से कौन-सा निष्कर्ष सबसे उचित है?', options: ['GDP बढ़ने का अर्थ है कि सभी नागरिकों का कल्याण निश्चित रूप से बढ़ा है।', 'GDP आर्थिक गतिविधि का महत्वपूर्ण indicator है, लेकिन यह welfare का पूर्ण माप नहीं है।', 'GDP में वृद्धि का अर्थ है कि inequality समाप्त हो गई है।', 'GDP बढ़ने पर environmental damage संभव नहीं है।'], answer: 1, hint: 'GDP is an important economic indicator, but not a complete measure of welfare.' },
 ],
-  Environment: [
-    { id: 401, question: 'रामसर संधि किससे संबंधित है?', options: ['आर्द्रभूमि संरक्षण', 'वन्यजीव व्यापार', 'जलवायु वित्त', 'समुद्री सुरक्षा'], answer: 0, hint: 'The convention is named after a city in Iran.' },
-    { id: 402, question: 'ओजोन परत मुख्यतः किस मंडल में पाई जाती है?', options: ['क्षोभमंडल', 'समतापमंडल', 'मध्यमंडल', 'बहिर्मंडल'], answer: 1, hint: 'It is above the weather-making layer.' },
-    { id: 403, question: 'भारत का पहला राष्ट्रीय उद्यान कौन सा है?', options: ['काजीरंगा', 'जिम कॉर्बेट', 'गिर', 'कान्हा'], answer: 1, hint: 'It was earlier known as Hailey National Park.' },
-  ],
+ Environment: [
+  { id: 401, question: 'रामसर संधि किससे संबंधित है?', options: ['आर्द्रभूमि संरक्षण', 'वन्यजीव व्यापार', 'जलवायु वित्त', 'समुद्री सुरक्षा'], answer: 0, hint: 'The convention is named after a city in Iran.' },
+  { id: 402, question: 'ओजोन परत मुख्यतः किस मंडल में पाई जाती है?', options: ['क्षोभमंडल', 'समतापमंडल', 'मध्यमंडल', 'बहिर्मंडल'], answer: 1, hint: 'It is above the weather-making layer.' },
+  { id: 403, question: 'भारत का पहला राष्ट्रीय उद्यान कौन सा है?', options: ['काजीरंगा', 'जिम कॉर्बेट', 'गिर', 'कान्हा'], answer: 1, hint: 'It was earlier known as Hailey National Park.' },
+
+  { id: 404, question: 'पारिस्थितिकी के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. पारिस्थितिकी जीवों और उनके जैविक तथा अजैविक पर्यावरण के बीच संबंधों का अध्ययन है। 2. किसी ecosystem में केवल जैविक घटक ही पारस्परिक क्रिया करते हैं। 3. तापमान, प्रकाश और जल जैसे कारक अजैविक घटकों के उदाहरण हैं। सही उत्तर चुनिए:', options: ['केवल 1 और 2', 'केवल 1 और 3', 'केवल 2 और 3', '1, 2 और 3'], answer: 1, hint: 'Ecology includes interactions between living and non-living components.' },
+
+  { id: 405, question: 'Habitat और Ecological Niche के संबंध में निम्नलिखित में से कौन-सा कथन सबसे उपयुक्त है?', options: ['Habitat जीव की भूमिका बताता है, जबकि Niche उसका भौगोलिक स्थान बताता है।', 'Habitat बताता है कि जीव कहाँ रहता है, जबकि Niche ecosystem में उसकी भूमिका और संसाधनों के उपयोग को दर्शाता है।', 'Habitat और Niche समान अवधारणाएँ हैं।', 'Niche केवल अजैविक परिस्थितियों को दर्शाता है।'], answer: 1, hint: 'Habitat asks where; niche asks how and what role.' },
+
+  { id: 406, question: 'निम्नलिखित में से कौन-सा ecological organization का सही क्रम है?', options: ['Organism → Community → Population → Ecosystem → Biosphere', 'Population → Organism → Community → Biosphere → Ecosystem', 'Organism → Population → Community → Ecosystem → Biosphere', 'Organism → Ecosystem → Population → Community → Biosphere'], answer: 2, hint: 'Think from the smallest ecological level to the broadest.' },
+
+  { id: 407, question: 'किसी क्षेत्र में एक ही species के जीवों का समूह, जो सामान्यतः एक निश्चित क्षेत्र में रहता है और आपस में प्रजनन कर सकता है, कहलाता है:', options: ['Community', 'Population', 'Ecosystem', 'Biome'], answer: 1, hint: 'A population consists of members of the same species.' },
+
+  { id: 408, question: 'निम्नलिखित कथनों पर विचार कीजिए: 1. Community में एक ही species की population शामिल होती है। 2. Community में विभिन्न species की populations शामिल हो सकती हैं। 3. Ecosystem में biotic और abiotic दोनों components तथा उनके बीच interactions शामिल होते हैं। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 2, hint: 'A community is made up of populations of different species.' },
+
+  { id: 409, question: 'Ecosystem में energy flow के संदर्भ में निम्नलिखित में से कौन-सा कथन सही है?', options: ['ऊर्जा ecosystem में पूरी तरह चक्रीय रूप से पुनर्चक्रित होती है।', 'ऊर्जा का प्रवाह सामान्यतः एकदिशीय होता है।', 'Decomposers ऊर्जा का मुख्य स्रोत होते हैं।', 'ऊर्जा का प्रवाह केवल consumers के बीच होता है।'], answer: 1, hint: 'Energy enters primarily through producers and ultimately dissipates as heat.' },
+
+  { id: 410, question: 'निम्नलिखित में से कौन-सा food chain को सही रूप में दर्शाता है?', options: ['बाघ → हिरण → घास → सूर्य', 'घास → हिरण → बाघ', 'हिरण → घास → बाघ', 'सूर्य → बाघ → हिरण → घास'], answer: 1, hint: 'Energy moves from producer to herbivore to carnivore.' },
+
+  { id: 411, question: 'Producers, Consumers और Decomposers के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. Producers सामान्यतः autotrophic organisms होते हैं। 2. Consumers अपने भोजन के लिए अन्य organisms पर निर्भर होते हैं। 3. Decomposers dead organic matter को तोड़ने और nutrient recycling में महत्वपूर्ण भूमिका निभाते हैं। सही उत्तर चुनिए:', options: ['केवल 1', 'केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3'], answer: 3, hint: 'All three statements describe core functional groups in ecosystems.' },
+
+  { id: 412, question: 'निम्नलिखित में से कौन-सा कथन Energy Flow और Nutrient Cycling के बीच सही अंतर बताता है?', options: ['दोनों पूरी तरह एकदिशीय प्रक्रियाएँ हैं।', 'Energy का प्रवाह सामान्यतः एकदिशीय होता है, जबकि nutrients ecosystem में चक्रीय रूप से circulate करते हैं।', 'Energy चक्रीय होती है, nutrients एकदिशीय होते हैं।', 'दोनों केवल producers द्वारा नियंत्रित होते हैं।'], answer: 1, hint: 'Energy is transferred and dissipated; nutrients are recycled.' },
+
+  { id: 413, question: 'एक तालाब में सूर्य का प्रकाश, जल, घुलित खनिज, शैवाल, मछलियाँ और सूक्ष्मजीव मौजूद हैं। इस उदाहरण के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए: 1. जल और घुलित खनिज अजैविक components हैं। 2. शैवाल और मछलियाँ जैविक components हैं। 3. इन सभी components के बीच interactions होने के कारण तालाब को ecosystem के रूप में देखा जा सकता है। 4. तालाब में energy और nutrients दोनों बिल्कुल एक ही तरीके से circulate करते हैं। सही उत्तर चुनिए:', options: ['केवल 1 और 2', 'केवल 1, 2 और 3', 'केवल 2, 3 और 4', '1, 2, 3 और 4'], answer: 1, hint: 'Energy flow and nutrient cycling are fundamentally different processes.' },
+],
   'Science & Tech': [
     { id: 501, question: 'ISRO का मुख्यालय किस शहर में स्थित है?', options: ['चेन्नई', 'हैदराबाद', 'बेंगलुरु', 'नई दिल्ली'], answer: 2, hint: 'India’s space city.' },
     { id: 502, question: 'CRISPR तकनीक का उपयोग मुख्यतः किसके लिए किया जाता है?', options: ['जीन संपादन', 'मौसम पूर्वानुमान', 'रॉकेट ईंधन', 'भूकंप मापन'], answer: 0, hint: 'It can make precise changes in DNA.' },
