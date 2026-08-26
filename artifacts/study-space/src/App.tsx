@@ -671,6 +671,73 @@ function App() {
       </button>
     </form>
   </div>
+</section><section id="privacy" className="workspace-section privacy-section" aria-labelledby="privacy-title">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">Your privacy matters</p>
+      <h2 id="privacy-title">Privacy Policy.</h2>
+    </div>
+    <span className="section-number">10 / 10</span>
+  </div>
+
+  <div className="privacy-card">
+    <p className="privacy-updated">
+      Last updated: 26 August 2026
+    </p>
+
+    <h3>1. About this policy</h3>
+    <p>
+      Study Space आपकी privacy का सम्मान करता है। यह Privacy Policy बताती है कि
+      वेबसाइट का उपयोग करते समय आपकी जानकारी के साथ किस प्रकार व्यवहार किया जाता है।
+    </p>
+
+    <h3>2. Information stored on your device</h3>
+    <p>
+      Study Space की कुछ सुविधाएँ, जैसे study progress, saved notes, quiz history,
+      selected subject और dark mode preference, आपके browser के local storage में
+      locally save हो सकती हैं।
+    </p>
+
+    <h3>3. Personal information</h3>
+    <p>
+      वर्तमान में Study Space अपने सामान्य study features के लिए कोई अनावश्यक
+      personal information मांगने का उद्देश्य नहीं रखता।
+    </p>
+
+    <h3>4. Contact information</h3>
+    <p>
+      Contact Us सुविधा का उपयोग करते समय आपके द्वारा स्वयं दी गई जानकारी का उपयोग
+      आपके संदेश का उत्तर देने के उद्देश्य से किया जा सकता है।
+    </p>
+
+    <h3>5. Analytics</h3>
+    <p>
+      भविष्य में website usage और reach समझने के लिए analytics tools जोड़े जा सकते हैं।
+      ऐसे tools website traffic और usage information collect कर सकते हैं।
+    </p>
+
+    <h3>6. Third-party services</h3>
+    <p>
+      Website में कुछ third-party services, जैसे analytics, fonts या अन्य technical
+      services का उपयोग किया जा सकता है। इन services की अपनी privacy policies हो सकती हैं।
+    </p>
+
+    <h3>7. Data security</h3>
+    <p>
+      हम reasonable technical measures का उपयोग करने का प्रयास करते हैं, लेकिन internet
+      पर किसी भी system की security को पूर्णतः guaranteed नहीं माना जा सकता।
+    </p>
+
+    <h3>8. Policy updates</h3>
+    <p>
+      Website की सुविधाओं में बदलाव होने पर यह Privacy Policy भी समय-समय पर update की जा सकती है।
+    </p>
+
+    <h3>9. Contact</h3>
+    <p>
+      Privacy Policy से संबंधित किसी प्रश्न के लिए Contact Us section का उपयोग करें।
+    </p>
+  </div>
 </section> <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
         </div>
       </main>
