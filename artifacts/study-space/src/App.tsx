@@ -4,6 +4,7 @@ import {
   BookOpen,
   Info,
   Mail,
+  Shield,
   Check,
   CheckCircle2,
   ChevronLeft,
@@ -389,7 +390,7 @@ function App() {
   }, [quizTimeLeft, quizMode, quizSubmitted]);
 
   useEffect(() => {
-  const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history', 'about', 'contact'];
+ const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history', 'about', 'contact', 'privacy'];
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (visible) setActiveSection(visible.target.id);
@@ -487,6 +488,7 @@ function App() {
             { id: 'history', label: 'Test history', icon: HistoryIcon },
             { id: 'about', label: 'About Us', icon: Info },
             { id: 'contact', label: 'Contact Us', icon: Mail },
+            { id: 'privacy', label: 'Privacy Policy', icon: Shield },
     ].map(({ id, label, icon: Icon }) => <button key={id} className={`side-link ${activeSection === id ? 'active' : ''}`} onClick={() => navigate(id)} data-testid={`nav-${id}`}><Icon size={17} strokeWidth={1.8} /><span>{label}</span>{activeSection === id && <i />}</button>)}
         </nav>
         <div className="sidebar-foot">
