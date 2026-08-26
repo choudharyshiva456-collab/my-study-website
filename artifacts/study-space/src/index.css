@@ -553,3 +553,52 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     font-size: 22px;
   }
 }
+/* ================================
+   PRIVACY POLICY
+================================ */
+
+.privacy-card {
+  max-width: 900px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.privacy-updated {
+  margin: 0 0 24px;
+  color: var(--saffron);
+  font-size: 11px;
+  font-family: var(--app-font-mono);
+}
+
+.privacy-card h3 {
+  margin: 24px 0 8px;
+  color: var(--navy);
+  font-family: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.privacy-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+  .privacy-card {
+    padding: 20px;
+  }
+
+  .privacy-card h3 {
+    font-size: 17px;
+  }
+
+  .privacy-card p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
