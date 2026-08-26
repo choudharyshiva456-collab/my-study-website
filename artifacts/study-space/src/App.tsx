@@ -671,6 +671,7 @@ function App() {
       </button>
     </form>
   </div>
+</section>
 </section><section id="privacy" className="workspace-section privacy-section" aria-labelledby="privacy-title">
   <div className="section-heading">
     <div>
