@@ -2,6 +2,7 @@ import { type FormEvent, useEffect, useMemo, useState } from 'react';
 import {
   ArrowRight,
   BookOpen,
+  Info,
   Check,
   CheckCircle2,
   ChevronLeft,
@@ -387,7 +388,7 @@ function App() {
   }, [quizTimeLeft, quizMode, quizSubmitted]);
 
   useEffect(() => {
-    const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history'];
+   const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history', 'about'];
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (visible) setActiveSection(visible.target.id);
@@ -483,7 +484,8 @@ function App() {
             { id: 'notes', label: 'Study notes', icon: NotebookPen },
             { id: 'mcq', label: 'Practice quiz', icon: FileText },
             { id: 'history', label: 'Test history', icon: HistoryIcon },
-          ].map(({ id, label, icon: Icon }) => <button key={id} className={`side-link ${activeSection === id ? 'active' : ''}`} onClick={() => navigate(id)} data-testid={`nav-${id}`}><Icon size={17} strokeWidth={1.8} /><span>{label}</span>{activeSection === id && <i />}</button>)}
+            { id: 'about', label: 'About Us', icon: Info },
+    ].map(({ id, label, icon: Icon }) => <button key={id} className={`side-link ${activeSection === id ? 'active' : ''}`} onClick={() => navigate(id)} data-testid={`nav-${id}`}><Icon size={17} strokeWidth={1.8} /><span>{label}</span>{activeSection === id && <i />}</button>)}
         </nav>
         <div className="sidebar-foot">
           <div className="quote-card"><Sparkles size={16} /><p>“The mind is not a vessel to be filled, but a fire to be kindled.”</p><small>— Plutarch</small></div>
@@ -571,7 +573,58 @@ function App() {
             <div className="history-toolbar"><p>{history.length ? 'Each attempt is a useful marker, not a verdict.' : 'Your completed tests will settle here, one attempt at a time.'}</p>{history.length > 0 && <button className="text-button danger-text" onClick={() => { if (window.confirm('Clear all test history from this device?')) setHistory([]); }} data-testid="button-clear-history"><Trash2 size={14} /> Clear history</button>}</div>
             {history.length === 0 ? <div className="history-empty"><HistoryIcon size={26} /><strong>No attempts yet</strong><span>Choose a subject above and take your first test.</span></div> : <div className="history-list" data-testid="list-test-history">{history.map((attempt) => <div className="history-row" key={attempt.id} data-testid={`history-row-${attempt.id}`}><span className="history-date">{attempt.date}</span><span className="history-subject"><strong>{attempt.subject}</strong><small>{attempt.mode === 'timed' ? 'Timed test' : attempt.mode === 'random' ? 'Random test' : 'Study set'}</small></span><span className="history-score"><strong>{attempt.score} / {attempt.total}</strong><small>correct</small></span><span className="history-percentage">{attempt.percentage}%</span></div>)}</div>}
           </section>
-          <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
+        <section id="about" className="workspace-section about-section" aria-labelledby="about-title">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">About Study Space</p>
+      <h2 id="about-title">Built for focused preparation.</h2>
+    </div>
+    <span className="section-number">08 / 10</span>
+  </div>
+
+  <div className="about-card">
+    <div className="about-main">
+      <h3>Study Space · UPSC 2027</h3>
+
+      <p>
+        Study Space एक personal study platform है, जिसे UPSC 2027 की तैयारी को
+        व्यवस्थित, focused और consistent बनाने के लिए बनाया गया है।
+      </p>
+
+      <p>
+        यहाँ students एक ही जगह पर subjects, study notes, revision material,
+        MCQs, practice tests, progress tracking और focus timer का उपयोग कर सकते हैं।
+      </p>
+
+      <p>
+        हमारा उद्देश्य पढ़ाई को complicated बनाने के बजाय उसे simple,
+        structured और नियमित बनाना है।
+      </p>
+    </div>
+
+    <div className="about-points">
+      <div>
+        <strong>📚 Structured Learning</strong>
+        <span>Topic-wise notes और subject-wise preparation.</span>
+      </div>
+
+      <div>
+        <strong>🧠 Active Practice</strong>
+        <span>Conceptual और UPSC-oriented MCQ practice.</span>
+      </div>
+
+      <div>
+        <strong>📈 Track Progress</strong>
+        <span>Tests, scores और study progress एक जगह.</span>
+      </div>
+
+      <div>
+        <strong>⏱️ Focused Study</strong>
+        <span>छोटे और focused study sessions के लिए timer.</span>
+      </div>
+    </div>
+  </div>
+</section>  <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
         </div>
       </main>
     </div>
