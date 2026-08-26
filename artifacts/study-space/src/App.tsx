@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BookOpen,
   Info,
+  Mail,
   Check,
   CheckCircle2,
   ChevronLeft,
@@ -388,7 +389,7 @@ function App() {
   }, [quizTimeLeft, quizMode, quizSubmitted]);
 
   useEffect(() => {
-   const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history', 'about'];
+  const ids = ['home', 'subjects', 'progress', 'timer', 'notes', 'mcq', 'history', 'about', 'contact'];
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (visible) setActiveSection(visible.target.id);
@@ -485,6 +486,7 @@ function App() {
             { id: 'mcq', label: 'Practice quiz', icon: FileText },
             { id: 'history', label: 'Test history', icon: HistoryIcon },
             { id: 'about', label: 'About Us', icon: Info },
+            { id: 'contact', label: 'Contact Us', icon: Mail },
     ].map(({ id, label, icon: Icon }) => <button key={id} className={`side-link ${activeSection === id ? 'active' : ''}`} onClick={() => navigate(id)} data-testid={`nav-${id}`}><Icon size={17} strokeWidth={1.8} /><span>{label}</span>{activeSection === id && <i />}</button>)}
         </nav>
         <div className="sidebar-foot">
@@ -624,7 +626,50 @@ function App() {
       </div>
     </div>
   </div>
-</section>  <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
+</section> <section id="contact" className="workspace-section contact-section" aria-labelledby="contact-title">
+  <div className="section-heading">
+    <div>
+      <p className="eyebrow">Get in touch</p>
+      <h2 id="contact-title">Contact Us.</h2>
+    </div>
+    <span className="section-number">09 / 10</span>
+  </div>
+
+  <div className="contact-card">
+    <div className="contact-copy">
+      <h3>We’d love to hear from you.</h3>
+      <p>
+        Study Space को बेहतर बनाने के लिए आपके सुझाव, feedback और questions
+        हमारे लिए महत्वपूर्ण हैं।
+      </p>
+      <p>
+        आप website से संबंधित किसी समस्या, suggestion या improvement idea के
+        बारे में हमसे संपर्क कर सकते हैं।
+      </p>
+    </div>
+
+    <form className="contact-form">
+      <label>
+        <span>Your Name</span>
+        <input type="text" placeholder="अपना नाम लिखें" />
+      </label>
+
+      <label>
+        <span>Email</span>
+        <input type="email" placeholder="अपना email लिखें" />
+      </label>
+
+      <label>
+        <span>Message</span>
+        <textarea rows={5} placeholder="अपना message लिखें..." />
+      </label>
+
+      <button className="button button-primary" type="button">
+        Send Message <ArrowRight size={15} />
+      </button>
+    </form>
+  </div>
+</section> <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
         </div>
       </main>
     </div>
