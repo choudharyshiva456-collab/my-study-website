@@ -160,10 +160,32 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .art-caption small { font: 9px var(--app-font-mono); text-transform: uppercase; letter-spacing: .09em; color: #d99d70; }
 .art-stamp { position: absolute; z-index: 3; right: 30px; top: 31px; color: #efdec2; font: 500 24px/.75 var(--app-font-serif); text-align: center; }
 .art-stamp small { font: 8px var(--app-font-mono); letter-spacing: .13em; }
-.today-strip { display: flex; align-items: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 80px; }
-.today-strip > div:first-child { flex: 1; display: grid; gap: 4px; }
-.strip-label { color: var(--ink-soft); font: 10px var(--app-font-mono); text-transform: uppercase; letter-spacing: .1em; }
-.today-strip strong { color: var(--navy); font: 600 18px var(--app-font-serif); }
+.today-strip {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  min-height: 88px;
+  padding: 8px 0;
+}
+
+.today-strip > div:first-child {
+  flex: 1;
+  display: grid;
+  gap: 5px;
+}
+
+.strip-label {
+  color: var(--ink-soft);
+  font: 10px var(--app-font-mono);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.today-strip strong {
+  color: var(--navy);
+  font: 600 19px var(--app-font-serif);
+}
 .streak { display: flex; align-items: center; gap: 8px; padding: 0 37px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
 .streak svg { color: var(--saffron); }
 .streak strong { font: 600 12px var(--app-font-sans); }
