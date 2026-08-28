@@ -264,7 +264,34 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
 @media (max-width: 700px) {
   .sidebar { width: 275px; transform: translateX(-100%); transition: transform .3s ease; box-shadow: 14px 0 30px rgba(16,42,53,.18); }.sidebar.sidebar-open { transform: translateX(0); }.mobile-close { display: grid; color: #d6e0da; border-color: rgba(255,255,255,.2); }.nav-scrim { display: block; position: fixed; z-index: 15; inset: 0; width: 100%; border: 0; background: rgba(16,42,53,.42); }.main-content { margin-left: 0; }.mobile-header { position: sticky; z-index: 10; top: 0; display: flex; align-items: center; justify-content: space-between; height: 61px; padding: 0 18px; background: color-mix(in srgb, var(--paper) 91%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }.mobile-brand { gap: 9px; color: var(--navy); }.mobile-brand .brand-mark { width: 26px; height: 26px; transform: rotate(-8deg) scale(.8); }.mobile-brand strong { font: 600 19px var(--app-font-serif); }.content-wrap { width: calc(100% - 36px); }.hero-section { padding-top: 29px; min-height: auto; }.hero-topline { font-size: 8px; }.hero-grid { grid-template-columns: 1fr; padding: 44px 0 35px; }.hero-copy h1 { font-size: clamp(58px, 16vw, 82px); }.hero-intro { font-size: 13px; }.hero-actions { align-items: flex-start; flex-direction: column; gap: 14px; }.hero-art { height: 230px; clip-path: polygon(5% 0, 100% 0, 94% 100%, 0 94%); }.sun-disc { width: 150px; height: 150px; left: calc(50% - 75px); top: 33px; }.orbit-one { width: 290px; height: 145px; left: calc(50% - 145px); top: 47px; }.orbit-two { width: 245px; height: 120px; left: calc(50% - 122px); top: 58px; }.art-book { width: 120px; height: 78px; left: calc(50% - 59px); top: 104px; }.art-book div { margin: 6px 0; }.art-caption { font-size: 24px; left: 20px; bottom: 21px; }.art-stamp { right: 20px; top: 21px; font-size: 19px; }.today-strip { padding: 18px 0; align-items: flex-start; }.today-strip > div:first-child { gap: 6px; }.today-strip strong { font-size: 16px; line-height: 1.1; }.streak { display: none; }.strip-arrow { width: 39px; height: 39px; margin-left: 14px; }.dashboard-section, .workspace-section { padding: 70px 0 65px; }.section-heading h2 { font-size: 40px; }.metric-grid { grid-template-columns: repeat(2, 1fr); gap: 7px; }.metric-card { min-height: 145px; padding: 15px; }.metric-icon { margin-bottom: 12px; }.metric-card > strong { font-size: 32px; }.metric-goal { grid-column: span 2; min-height: 104px; }.progress-layout, .notes-layout { grid-template-columns: 1fr; }.big-progress-number { font-size: 82px; }.progress-note { margin-top: 28px; margin-bottom: 30px; }.topic-row { grid-template-columns: 25px 1fr 18px; gap: 10px; padding: 15px 2px; }.topic-detail { display: none; }.timer-panel { grid-template-columns: 1fr; gap: 16px; min-height: 420px; padding: 28px 22px; text-align: center; }.timer-side { justify-content: center; }.timer-side p { text-align: left; }.timer-clock { font-size: clamp(61px, 18vw, 96px); }.timer-actions { justify-content: center; }.timer-message { left: 22px; right: 22px; bottom: 25px; }.library-top { align-items: flex-start; flex-direction: column; }.search-field { width: 100%; }.notes-list { grid-template-columns: 1fr; }.quiz-wrap { padding: 21px 17px 22px; }.quiz-question h3 { font-size: 26px; }.quiz-nav .button { padding-left: 11px; padding-right: 11px; }.section-number { font-size: 8px; } footer { flex-wrap: wrap; gap: 7px; } footer .footer-line { flex-basis: 100%; order: 4; margin-top: 6px; }
 }
+/* Step 9 — Mobile Sidebar UX Polish */
+@media (max-width: 700px) {
+  .sidebar {
+    padding-top: 24px;
+  }
 
+  .sidebar .side-link {
+    min-height: 46px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .sidebar .side-link:active {
+    transform: scale(.98);
+  }
+
+  .sidebar .mobile-close {
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .sidebar .mobile-close:hover {
+    transform: rotate(8deg);
+  }
+
+  .nav-scrim {
+    backdrop-filter: blur(2px);
+  }
+}
 /* Command center additions */
 .reset-progress-button { display: inline-flex; align-items: center; gap: 7px; margin: 17px 0 0; padding: 7px 2px; border: 0; border-top: 1px solid rgba(255,255,255,.13); width: 100%; background: transparent; color: #849b98; font: 10px var(--app-font-mono); text-align: left; transition: color .2s ease; }
 .reset-progress-button:hover { color: #e49b70; }
