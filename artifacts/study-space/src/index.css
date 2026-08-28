@@ -120,7 +120,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .hero-copy h1 { 
   margin: 16px 0 22px; 
   color: var(--navy); 
-  font: 600 clamp(57px, 7vw, 93px)/.88 var(--app-font-serif); 
+  font: 600 clamp(57px, 7vw, 93px)/.83 var(--app-font-serif);
   letter-spacing: -.045em; 
 }
 
