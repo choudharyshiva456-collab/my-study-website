@@ -460,7 +460,8 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
-/* ================================
+}
+  /* ================================
    ABOUT US
 ================================ */
 
