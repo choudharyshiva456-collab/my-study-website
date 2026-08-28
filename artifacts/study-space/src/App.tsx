@@ -739,9 +739,18 @@ function App() {
       Privacy Policy से संबंधित किसी प्रश्न के लिए Contact Us section का उपयोग करें।
     </p>
   </div>
-</section> <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
-        </main>
+</section>
+
+<footer>
+  <BrandMark />
+  <span>Study Space · UPSC 2027</span>
+  <span className="footer-line" />
+  <span>Built for the long read.</span>
+</footer>
+
     </div>
+  </main>
+  </div>
   );
 }
 
