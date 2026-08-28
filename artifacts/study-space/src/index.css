@@ -101,7 +101,11 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .side-rule { width: 100%; height: 1px; background: rgba(237,240,232,.16); margin: 38px 0 27px; }
 .eyebrow { margin: 0; color: var(--saffron); font: 500 10px var(--app-font-mono); text-transform: uppercase; letter-spacing: .14em; }
 .side-label { color: #89a09d; margin: 0 0 13px 11px; }
-.side-nav { display: grid; gap: 5px; }
+.side-nav {
+  display: grid;
+  gap: 7px;
+  margin-top: 6px;
+}
 .side-link { position: relative; display: flex; align-items: center; gap: 12px; width: 100%; color: #afc0bd; background: transparent; border: 0; border-radius: 5px; padding: 12px 11px; text-align: left; font-size: 13px; transition: color .25s ease, background .25s ease, transform .25s ease; }
 .side-link:hover { color: #fff; background: rgba(255,255,255,.06); transform: translateX(2px); }
 .side-link.active { color: #fff; background: rgba(255,255,255,.09); }
