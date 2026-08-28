@@ -507,7 +507,7 @@ function App() {
         </header>
         <div className="content-wrap">
           <section id="home" className="hero-section">
-            <div className="hero-topline"><span className="status-dot" /><span>UPSC 2027 · Tuesday, 18 June 2024</span><span className="topline-line" /><span>Command center</span></div>
+            <div className="hero-topline"><span className="status-dot" /><span>UPSC 2027 · command center</span><span className="topline-line" /><span>Command center</span></div>
             <div className="hero-grid">
               <div className="hero-copy"><p className="eyebrow">Namaste, learner</p><h1>Make room for<br /><em>one clear thought.</em></h1><p className="hero-intro">यहाँ आपकी UPSC 2027 तैयारी को थोड़ी शांति मिलती है। Choose a subject, work the next small block, and keep your place.</p><div className="hero-actions"><button className="button button-primary" onClick={startStudying} data-testid="button-start-studying"><Play size={16} fill="currentColor" /> Start a focus session <ArrowRight size={15} /></button><button className="text-button" onClick={() => navigate('subjects')} data-testid="button-view-subjects">Choose a subject <ArrowRight size={14} /></button></div></div>
               <div className="hero-art" aria-hidden="true"><div className="sun-disc" /><div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" /><div className="art-book"><div /><div /><div /></div><span className="art-caption">अध्ययन<br /><small>quiet work, daily</small></span><div className="art-stamp">27<br /><small>UPSC</small></div></div>
