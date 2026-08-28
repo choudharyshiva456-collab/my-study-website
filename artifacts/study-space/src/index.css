@@ -115,6 +115,28 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
   transform: translateX(2px);
 }
 .side-link.active i { position: absolute; right: 11px; width: 4px; height: 4px; border-radius: 50%; background: var(--saffron); }
+/* Step 8 — Sidebar icon & text polish */
+.side-link svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  opacity: .82;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.side-link:hover svg {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.side-link.active svg {
+  opacity: 1;
+  color: var(--saffron);
+}
+
+.side-link span {
+  line-height: 1.4;
+}
 .sidebar-foot { margin-top: auto; }
 .quote-card { padding: 16px; border: 1px solid rgba(237,240,232,.14); background: rgba(255,255,255,.045); }
 .quote-card svg { color: var(--saffron); margin-bottom: 9px; }
