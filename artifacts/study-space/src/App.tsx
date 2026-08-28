@@ -670,9 +670,9 @@ function App() {
         Send Message <ArrowRight size={15} />
       </button>
     </form>
-  </div>
+ </div>
 </section>
-</section><section id="privacy" className="workspace-section privacy-section" aria-labelledby="privacy-title">
+<section id="privacy" className="workspace-section privacy-section" aria-labelledby="privacy-title">
   <div className="section-heading">
     <div>
       <p className="eyebrow">Your privacy matters</p>
