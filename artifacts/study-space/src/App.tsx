@@ -740,8 +740,7 @@ function App() {
     </p>
   </div>
 </section> <footer><BrandMark /><span>Study Space · UPSC 2027</span><span className="footer-line" /><span>Built for the long read.</span></footer>
-        </div>
-      </main>
+        </main>
     </div>
   );
 }
