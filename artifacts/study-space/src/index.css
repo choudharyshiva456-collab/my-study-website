@@ -108,7 +108,12 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 }
 .side-link { position: relative; display: flex; align-items: center; gap: 12px; width: 100%; color: #afc0bd; background: transparent; border: 0; border-radius: 5px; padding: 12px 11px; text-align: left; font-size: 13px; transition: color .25s ease, background .25s ease, transform .25s ease; }
 .side-link:hover { color: #fff; background: rgba(255,255,255,.06); transform: translateX(2px); }
-.side-link.active { color: #fff; background: rgba(255,255,255,.09); }
+.side-link.active {
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  box-shadow: inset 3px 0 0 var(--saffron);
+  transform: translateX(2px);
+}
 .side-link.active i { position: absolute; right: 11px; width: 4px; height: 4px; border-radius: 50%; background: var(--saffron); }
 .sidebar-foot { margin-top: auto; }
 .quote-card { padding: 16px; border: 1px solid rgba(237,240,232,.14); background: rgba(255,255,255,.045); }
