@@ -829,3 +829,65 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     line-height: 1.85;
   }
 }
+/* STEP 12 — SUBJECT SECTION FINAL POLISH */
+
+.subjects-heading-line {
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.subjects-heading-line p {
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.subjects-heading-line span {
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.subject-grid {
+  gap: 8px;
+}
+
+.subject-card {
+  min-height: 142px;
+  padding: 18px;
+}
+
+.subject-card:hover {
+  transform: translateY(-2px);
+}
+
+.subject-card.selected {
+  transform: translateY(-1px);
+}
+
+.subject-name {
+  gap: 4px;
+}
+
+.subject-note {
+  line-height: 1.5;
+  max-width: 230px;
+}
+
+@media (max-width: 700px) {
+  .subjects-heading-line {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .subjects-heading-line span {
+    font-size: 9px;
+  }
+
+  .subject-grid {
+    gap: 8px;
+  }
+
+  .subject-card {
+    min-height: 136px;
+  }
+}
