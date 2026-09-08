@@ -755,6 +755,76 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
   }
 
   .privacy-card p {
+    /* STEP 11 — SUBJECT CARDS UI POLISH */
+
+.subject-card {
+  min-height: 150px;
+  padding: 19px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(16, 42, 53, 0.04);
+}
+
+.subject-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.subject-card:hover {
+  box-shadow: 0 10px 22px rgba(16, 42, 53, 0.08);
+}
+
+.subject-card.selected {
+  box-shadow: 0 10px 24px rgba(16, 42, 53, 0.15);
+}
+
+.subject-card.selected::before {
+  background: var(--saffron);
+}
+
+.subject-card:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 4px;
+}
+
+.subject-select {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.subject-card.selected .subject-select {
+  border-color: var(--saffron);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 700px) {
+  .subject-card {
+    min-height: 136px;
+    padding: 14px;
+    border-radius: 5px;
+  }
+
+  .subject-name strong {
+    font-size: 19px;
+  }
+
+  .subject-select {
+    width: 27px;
+    height: 27px;
+    right: 13px;
+    top: 13px;
+  }
+}
     font-size: 14px;
     line-height: 1.85;
   }
