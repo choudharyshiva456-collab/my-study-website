@@ -891,3 +891,100 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     min-height: 136px;
   }
 }
+/* STEP 13 — NOTES + QUIZ UI CONSISTENCY */
+
+.note-form,
+.quiz-controls,
+.quiz-wrap {
+  border: 1px solid var(--line);
+  box-shadow: 0 5px 18px rgba(16, 42, 53, 0.04);
+}
+
+.note-form {
+  border-left: 3px solid var(--saffron);
+}
+
+.note-form-heading {
+  font-size: 17px;
+}
+
+.note-form input,
+.note-form textarea,
+.note-form select,
+.quiz-selector select {
+  border-radius: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-form input:hover,
+.note-form textarea:hover,
+.note-form select:hover,
+.quiz-selector select:hover {
+  border-color: var(--saffron);
+}
+
+.notes-list {
+  gap: 14px;
+}
+
+.note-card {
+  min-height: 185px;
+  padding: 19px;
+  box-shadow: 0 4px 14px rgba(16, 42, 53, 0.035);
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px rgba(16, 42, 53, 0.08);
+}
+
+.note-subject-chip {
+  border-radius: 2px;
+}
+
+.quiz-controls {
+  border-left: 3px solid var(--teal);
+}
+
+.quiz-wrap {
+  box-shadow: 0 6px 20px rgba(16, 42, 53, 0.05);
+}
+
+.option {
+  border-radius: 4px;
+}
+
+.option:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(16, 42, 53, 0.05);
+}
+
+.option.selected {
+  box-shadow: 0 4px 14px rgba(217, 129, 69, 0.08);
+}
+
+@media (max-width: 700px) {
+  .note-form,
+  .quiz-controls,
+  .quiz-wrap {
+    box-shadow: 0 3px 12px rgba(16, 42, 53, 0.04);
+  }
+
+  .note-card {
+    min-height: 170px;
+    padding: 16px;
+  }
+
+  .quiz-controls {
+    align-items: stretch;
+  }
+
+  .quiz-selector select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .option {
+    padding: 12px;
+  }
+}
