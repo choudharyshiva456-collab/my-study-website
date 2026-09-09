@@ -6,6 +6,9 @@
     "outDir": "dist",
     "rootDir": "src",
     "types": ["node"]
+"esModuleInterop": true,
+"allowSyntheticDefaultImports": true
+
   },
   "include": ["src"],
   "references": [
