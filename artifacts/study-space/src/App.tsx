@@ -434,7 +434,7 @@ function App() {
     setQuizSubject(subject);
     beginQuiz(subject, quizMode);
   };
-  const syncNotes = async () => {
+ const syncNotes = async () => {
   const code = syncCode.trim();
 
   if (!code) {
@@ -443,42 +443,136 @@ function App() {
   }
 
   try {
-    const response = await fetch(NOTES_API_URL, {
+    // 1. Get existing cloud notes
+    const getResponse = await fetch(NOTES_API_URL, {
       headers: {
         'x-notes-sync-code': code,
       },
     });
 
-    if (!response.ok) {
+    if (!getResponse.ok) {
       throw new Error('Sync failed');
     }
 
-    const remoteNotes: Note[] = await response.json();
+    const remoteNotes: Note[] = await getResponse.json();
 
-    setNotes((current) => {
-      const merged = new Map(
-        current.map((note) => [String(note.id), note])
+    // 2. Upload local notes that are not already in the cloud
+    const uploadedNotes: Note[] = [];
+
+    for (const localNote of notes) {
+      const alreadyExists = remoteNotes.some(
+        (remoteNote) =>
+          remoteNote.title === localNote.title &&
+          remoteNote.body === localNote.body &&
+          remoteNote.subject === localNote.subject
       );
 
-      remoteNotes.forEach((note) => {
-        merged.set(String(note.id), note);
+      if (alreadyExists) continue;
+
+      try {
+        const postResponse = await fetch(NOTES_API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-notes-sync-code': code,
+          },
+          body: JSON.stringify({
+            title: localNote.title,
+            body: localNote.body,
+            subject: localNote.subject,
+          }),
+        });
+
+        if (postResponse.ok) {
+          const createdNote: Note = await postResponse.json();
+          uploadedNotes.push(createdNote);
+        }
+      } catch {
+        // Keep local note safe if upload fails
+      }
+    }
+
+    // 3. Combine cloud + newly uploaded notes
+    setNotes((current) => {
+      const allNotes = [...remoteNotes, ...uploadedNotes, ...current];
+
+      const unique = new Map<string, Note>();
+
+      allNotes.forEach((note) => {
+        const key = `${note.title}|${note.body}|${note.subject}`;
+        if (!unique.has(key)) {
+          unique.set(key, note);
+        }
       });
 
-      return Array.from(merged.values());
+      return Array.from(unique.values());
     });
 
-    setSyncMessage(`Synced ${remoteNotes.length} cloud notes.`);
+    setSyncMessage(
+      `Synced ${remoteNotes.length + uploadedNotes.length} cloud notes.`
+    );
   } catch {
     setSyncMessage('Sync failed. Check your sync code.');
   }
 };
     const addNote = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!noteTitle.trim() || !noteBody.trim()) return;
-    setNotes((current) => [{ id: Date.now(), title: noteTitle.trim(), body: noteBody.trim(), subject: noteSubject, createdAt: 'Just now' }, ...current]);
-    setNoteTitle('');
-    setNoteBody('');
+  event.preventDefault();
+
+  if (!noteTitle.trim() || !noteBody.trim()) return;
+
+  const newNote: Note = {
+    id: crypto.randomUUID(),
+    title: noteTitle.trim(),
+    body: noteBody.trim(),
+    subject: noteSubject,
+    createdAt: new Date().toISOString(),
   };
+
+  // Save locally first
+  setNotes((current) => [newNote, ...current]);
+
+  setNoteTitle('');
+  setNoteBody('');
+
+  // Save to cloud if sync code is entered
+  const code = syncCode.trim();
+
+  if (!code) {
+    setSyncMessage('Note saved locally. Sync code not entered.');
+    return;
+  }
+
+  try {
+    const response = await fetch(NOTES_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-notes-sync-code': code,
+      },
+      body: JSON.stringify({
+        title: newNote.title,
+        body: newNote.body,
+        subject: newNote.subject,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Cloud save failed');
+    }
+
+    const cloudNote: Note = await response.json();
+
+    setNotes((current) =>
+      current.map((note) =>
+        note.id === newNote.id ? cloudNote : note
+      )
+    );
+
+    setSyncMessage('Note saved to cloud ☁️');
+  } catch {
+    setSyncMessage('Note saved locally. Cloud save failed.');
+  }
+};
 
   const submitQuiz = () => {
     if (quizSubmitted) return;
