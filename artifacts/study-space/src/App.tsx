@@ -33,7 +33,7 @@ import {
 
 type Subject = { id: string; label: string; hindi: string; note: string };
 type Topic = { id: string; english: string; hindi: string; detail: string };
-type Note = { id: number; title: string; body: string; subject: string; createdAt: string };
+type Note = { id: string | number; title: string; body: string; subject: string; createdAt: string };
 type Question = { id: number; question: string; options: string[]; answer: number; hint: string };
 type QuizMode = 'standard' | 'random' | 'timed';
 type HistoryEntry = { id: number; subject: string; score: number; total: number; percentage: number; date: string; mode: QuizMode };
