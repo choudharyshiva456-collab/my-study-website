@@ -3,9 +3,23 @@ import { desc, eq } from "drizzle-orm";
 import { db, notesTable, insertNoteSchema } from "@workspace/db";
 
 const router: IRouter = Router();
+const SYNC_CODE = process.env.NOTES_SYNC_CODE;
 
+if (!SYNC_CODE) {
+  throw new Error("NOTES_SYNC_CODE must be set.");
+}
+
+const checkSyncCode = (req: any, res: any, next: any) => {
+  const code = req.header("x-notes-sync-code");
+
+  if (code !== SYNC_CODE) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+
+  next();
+};
 // सभी notes प्राप्त करना
-router.get("/notes", async (_req, res) => {
+router.get("/notes", checkSyncCode, async (_req, res) => {
   try {
     const notes = await db
       .select()
@@ -20,7 +34,7 @@ router.get("/notes", async (_req, res) => {
 });
 
 // नया note save करना
-router.post("/notes", async (req, res) => {
+router.post("/notes", checkSyncCode, async (req, res) => {
   try {
     const note = insertNoteSchema.parse({
       ...req.body,
@@ -40,7 +54,7 @@ router.post("/notes", async (req, res) => {
 });
 
 // note delete करना
-router.delete("/notes/:id", async (req, res) => {
+router.delete("/notes/:id", checkSyncCode, async (req, res) => {
   try {
     await db
       .delete(notesTable)
