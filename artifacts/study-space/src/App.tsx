@@ -434,7 +434,44 @@ function App() {
     setQuizSubject(subject);
     beginQuiz(subject, quizMode);
   };
+  const syncNotes = async () => {
+  const code = syncCode.trim();
 
+  if (!code) {
+    setSyncMessage('Enter your sync code first.');
+    return;
+  }
+
+  try {
+    const response = await fetch(NOTES_API_URL, {
+      headers: {
+        'x-notes-sync-code': code,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Sync failed');
+    }
+
+    const remoteNotes: Note[] = await response.json();
+
+    setNotes((current) => {
+      const merged = new Map(
+        current.map((note) => [String(note.id), note])
+      );
+
+      remoteNotes.forEach((note) => {
+        merged.set(String(note.id), note);
+      });
+
+      return Array.from(merged.values());
+    });
+
+    setSyncMessage(`Synced ${remoteNotes.length} cloud notes.`);
+  } catch {
+    setSyncMessage('Sync failed. Check your sync code.');
+  }
+};
     const addNote = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!noteTitle.trim() || !noteBody.trim()) return;
@@ -557,7 +594,9 @@ function App() {
     onChange={(event) => setSyncCode(event.target.value)}
     placeholder="Enter your sync code"
   />
-  <small>{syncMessage || 'Use the same code on your other devices.'}</small>
+  <small><button type="button" onClick={syncNotes}>
+  Sync Notes
+</button>{syncMessage || 'Use the same code on your other devices.'}</small>
 </div>  <div className="notes-layout"><form className="note-form" onSubmit={addNote}><div className="note-form-heading"><NotebookPen size={19} /><span>New note</span><small>Saved locally</small></div><label><span>Title</span><input value={noteTitle} onChange={(event) => setNoteTitle(event.target.value)} placeholder="e.g. Article 21 in one line" data-testid="input-note-title" /></label><label><span>Subject</span><select value={noteSubject} onChange={(event) => setNoteSubject(event.target.value)} data-testid="select-note-subject">{subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.label} · {subject.hindi}</option>)}</select></label><label><span>Your thought</span><textarea value={noteBody} onChange={(event) => setNoteBody(event.target.value)} placeholder="Write the idea in your own words..." rows={5} data-testid="input-note-body" /></label><button className="button button-primary note-submit" type="submit" data-testid="button-add-note"><Plus size={16} /> Add note</button></form><div className="notes-library"><div className="library-top"><div><span className="eyebrow">Library <b>{notes.length}</b></span><strong>Recent fragments</strong></div><label className="search-field"><Search size={16} /><input type="search" value={noteSearch} onChange={(event) => setNoteSearch(event.target.value)} placeholder="Search your notes" data-testid="input-note-search" /></label></div><div className="note-filters" role="group" aria-label="Filter notes by subject"><button className={noteFilter === 'All' ? 'active' : ''} onClick={() => setNoteFilter('All')} data-testid="button-filter-notes-all">All <span>{notes.length}</span></button>{subjects.map((subject) => <button key={subject.id} className={noteFilter === subject.id ? 'active' : ''} onClick={() => setNoteFilter(subject.id)} data-testid={`button-filter-notes-${subject.id.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`}>{subject.label}</button>)}</div>{filteredNotes.length === 0 ? <div className="empty-state"><FileText size={26} /><strong>No notes found</strong><p>Try another phrase, or make a new note on the left.</p></div> : <div className="notes-list">{filteredNotes.map((note) => <article className="note-card" key={note.id} data-testid={`card-note-${note.id}`}><div className="note-card-top"><span>{note.createdAt}</span><button className="delete-button" onClick={() => setNotes((current) => current.filter((item) => item.id !== note.id))} data-testid={`button-delete-note-${note.id}`} aria-label={`Delete ${note.title}`}><Trash2 size={15} /></button></div><span className="note-subject-chip">{note.subject}</span><h3>{note.title}</h3>
 <NoteBody body={note.body} />
 
