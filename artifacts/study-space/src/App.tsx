@@ -348,6 +348,9 @@ function App() {
   const [noteTitle, setNoteTitle] = useState('');
   const [noteBody, setNoteBody] = useState('');
   const [noteSubject, setNoteSubject] = useState(() => getStored('study-subject', 'Polity'));
+  const NOTES_API_URL = 'https://my-study-website-api-server.vercel.app/api/notes';
+  const [syncCode, setSyncCode] = useState('');
+  const [syncMessage, setSyncMessage] = useState('');
   const [quizSubject, setQuizSubject] = useState(() => getStored('study-subject', 'Polity'));
   const [quizMode, setQuizMode] = useState<QuizMode>('standard');
   const [quizQuestions, setQuizQuestions] = useState<Question[]>(questionBanks.Polity);
@@ -432,7 +435,7 @@ function App() {
     beginQuiz(subject, quizMode);
   };
 
-  const addNote = (event: FormEvent<HTMLFormElement>) => {
+    const addNote = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!noteTitle.trim() || !noteBody.trim()) return;
     setNotes((current) => [{ id: Date.now(), title: noteTitle.trim(), body: noteBody.trim(), subject: noteSubject, createdAt: 'Just now' }, ...current]);
