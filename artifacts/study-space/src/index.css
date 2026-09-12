@@ -754,8 +754,9 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     font-size: 17px;
   }
 
-.privacy-card p {
-  font-size: 15px;
+  .privacy-card p {
+    font-size: 14px;
+    line-height: 1.85;
   }
 }
 
