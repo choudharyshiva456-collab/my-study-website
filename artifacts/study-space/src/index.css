@@ -758,6 +758,7 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
   font-size: 15px;
   }
 }
+
 /* STEP 11 — SUBJECT CARDS UI POLISH */
 
 .subject-card {
