@@ -828,10 +828,7 @@ footer { display: flex; align-items: center; gap: 12px; padding: 23px 0 30px; bo
     top: 13px;
   }
 }
-    font-size: 14px;
-    line-height: 1.85;
-  }
-}
+   
 /* STEP 12 — SUBJECT SECTION FINAL POLISH */
 
 .subjects-heading-line {
